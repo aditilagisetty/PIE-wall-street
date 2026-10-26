@@ -1,0 +1,6 @@
+{
+    "sketch": "gimbal_test/gimbal_test.ino",
+    "board": "arduino:avr:uno",
+    "programmer": "arduino:avrisp",
+    "output": "build"
+}
