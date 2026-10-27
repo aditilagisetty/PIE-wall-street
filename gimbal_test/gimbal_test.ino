@@ -8,21 +8,24 @@
  * The encoder only counts movement, so wherever the bar is at power-up is 0 deg
  * Start it level
  *
- * Wiring (Arduino Uno + Adafruit Motor Shield v2):
- *   Outer servo       -> shield "Servo 2" header (D9)
- *   Inner DC motor    -> shield M1 terminals
+ * Wiring (Arduino Uno + L298N motor driver):
+ *   Outer servo signal -> D9
+ *   L298N ENA          -> D5 (PWM, remove the ENA jumper)
+ *   L298N IN1 / IN2    -> D7 / D8
+ *   Inner DC motor     -> L298N OUT1 / OUT2
+ *   L298N GND          -> Arduino GND (common ground with the motor supply)
  *   Encoder channel A -> D2
  *   Encoder channel B -> D3
  *   Encoder VCC / GND -> 5V / GND
  */
 
 #include <Servo.h>
-#include <Wire.h>
-#include <Adafruit_MotorShield.h>
 
 // Pins
 const int PIN_SERVO     = 9;
-const int MOTOR_PORT    = 1;         // shield port M1
+const int PIN_MOTOR_EN  = 5;         // must be PWM; Servo lib disables PWM on D9/D10
+const int PIN_MOTOR_IN1 = 7;
+const int PIN_MOTOR_IN2 = 8;
 const int PIN_ENCODER_A = 2;
 const int PIN_ENCODER_B = 3;
 
@@ -43,13 +46,11 @@ const float COUNTS_PER_DEG = COUNTS_PER_REV / 360.0;
 // Inner motor: speed = KP x error (degrees) limited to MIN_SPEED..MAX_SPEED
 const float KP = 20.0;
 const int MIN_SPEED = 60;            // slowest speed that still turns the motor
-const int MAX_SPEED = 200;
+const int MAX_SPEED = 200;           // PWM duty, 0-255
 const float TOLERANCE_DEG = 1.0;     // close enough to stop
 const unsigned long MOVE_TIMEOUT_MS = 1500;
 
 // State
-Adafruit_MotorShield AFMS = Adafruit_MotorShield();
-Adafruit_DCMotor *innerMotor = AFMS.getMotor(MOTOR_PORT);
 Servo outerServo;
 
 volatile long encoderCount = 0;
@@ -67,6 +68,20 @@ float innerAngle() {
   return count / COUNTS_PER_DEG;
 }
 
+// speed 0-255, forward picks the direction
+void driveMotor(int speed, bool forward) {
+  digitalWrite(PIN_MOTOR_IN1, forward ? HIGH : LOW);
+  digitalWrite(PIN_MOTOR_IN2, forward ? LOW : HIGH);
+  analogWrite(PIN_MOTOR_EN, speed);
+}
+
+// Let the motor coast
+void stopMotor() {
+  analogWrite(PIN_MOTOR_EN, 0);
+  digitalWrite(PIN_MOTOR_IN1, LOW);
+  digitalWrite(PIN_MOTOR_IN2, LOW);
+}
+
 // Drive the inner motor until the bar reaches target (or we time out)
 void moveInner(int target) {
   unsigned long start = millis();
@@ -74,10 +89,9 @@ void moveInner(int target) {
     float error = target - innerAngle();
     if (abs(error) <= TOLERANCE_DEG) break;
 
-    innerMotor->setSpeed(constrain(KP * abs(error), MIN_SPEED, MAX_SPEED));
-    innerMotor->run(error > 0 ? FORWARD : BACKWARD);
+    driveMotor(constrain(KP * abs(error), MIN_SPEED, MAX_SPEED), error > 0);
   }
-  innerMotor->run(RELEASE);
+  stopMotor();
 }
 
 void moveTo(int outer, int inner) {
@@ -102,11 +116,10 @@ void sweep(bool outer, bool inner) {
 void setup() {
   Serial.begin(9600);
 
-  if (!AFMS.begin()) {               // default I2C address 0x60
-    Serial.println("Motor shield not found - check that it's seated.");
-    while (true) {}
-  }
-  innerMotor->run(RELEASE);          // shield remembers its last command across a reset
+  pinMode(PIN_MOTOR_EN, OUTPUT);
+  pinMode(PIN_MOTOR_IN1, OUTPUT);
+  pinMode(PIN_MOTOR_IN2, OUTPUT);
+  stopMotor();
 
   outerServo.attach(PIN_SERVO);
   outerServo.write(SERVO_LEVEL);
