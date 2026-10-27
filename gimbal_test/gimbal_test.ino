@@ -8,7 +8,7 @@
  * The encoder only counts movement, so wherever the bar is at power-up is 0 deg
  * Start it level
  *
- * Wiring (Arduino Uno + L298N motor driver):
+ * Wiring (Arduino Nano + L298N motor driver):
  *   Outer servo signal -> D9
  *   L298N ENA          -> D5 (PWM, remove the ENA jumper)
  *   L298N IN1 / IN2    -> D7 / D8
