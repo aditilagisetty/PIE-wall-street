@@ -1,5 +1,5 @@
 {
-    "sketch": "gimbal_test/gimbal_test.ino",
+    "sketch": "gimbal_sweep/gimbal_sweep.ino",
     "board": "arduino:avr:uno",
     "programmer": "arduino:avrisp",
     "output": "build"
