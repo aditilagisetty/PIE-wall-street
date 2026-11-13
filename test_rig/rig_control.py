@@ -21,9 +21,10 @@ Keyboard controls (click on the app window first so it gets your key presses):
                     what the throttle says. Only works when throttle is at 0,
                     so the props can't jump to speed the moment you arm.
 
-    Up / Down       Hold to raise or lower throttle smoothly (both props
-                    together), THROTTLE_RATE % per second. Hold Shift too for
-                    slow, fine control. Max is MAX_THROTTLE_PCT below.
+    Up / Down       Hold to raise or lower power smoothly (both props
+                    together). Speed per mode is in MODES below. Hold Shift
+                    too for slow, fine control.
+                    Max is MAX_THROTTLE_PCT below.
 
     Left / Right    Hold to tilt both gimbals smoothly, TILT_RATE degrees per
                     second. Hold Shift too for slow, fine control.
@@ -36,6 +37,14 @@ Keyboard controls (click on the app window first so it gets your key presses):
                     Press R again to stop and save.
 
 The sliders in the window do the same thing as the arrow keys.
+
+Power modes (pick one above the power slider):
+    ESC us      The ESC pulse width, like RCBenchmark's "ESC" control.
+                1000 us = off, 2000 us = full. Exact, no estimating.
+    Throttle %  Same thing as a percent: 1000 us = 0 %, 2000 us = 100 %.
+    Amps        Amps per motor. The app works out the throttle from
+                MOTOR_CURVE. No current sensor, so this is an estimate.
+    Put your own RCBenchmark numbers in MOTOR_CURVE to match your motors.
 
 Gimbal sliders:
     "Both gimbals" moves both to the same angle.
@@ -133,6 +142,37 @@ def estimate_amps(throttle_pct):
     return float(np.interp(throttle_pct, _THR, _AMPS)) * _V_SCALE ** 2
 
 
+def throttle_for_amps(amps):
+    """Throttle % that should draw this many amps per motor (from MOTOR_CURVE)."""
+    return float(np.interp(amps / _V_SCALE ** 2, _AMPS, _THR))
+
+
+MAX_AMPS = round(estimate_amps(MAX_THROTTLE_PCT), 1)   # amps at the throttle cap
+
+# ESC pulse: 1000 us = 0 %, 2000 us = 100 % (same as test_rig.ino)
+ESC_MIN_US, ESC_MAX_US = 1000, 2000
+
+
+def pct_to_us(pct):
+    return ESC_MIN_US + pct * (ESC_MAX_US - ESC_MIN_US) / 100.0
+
+
+def us_to_pct(us):
+    return (us - ESC_MIN_US) * 100.0 / (ESC_MAX_US - ESC_MIN_US)
+
+
+# Power slider modes:
+#   name: (title, unit, min, max, key speed per s, slow key speed, to throttle %, from throttle %)
+MODES = {
+    "us":       ("ESC pulse", "us", ESC_MIN_US, round(pct_to_us(MAX_THROTTLE_PCT)), 150, 30,
+                 us_to_pct, pct_to_us),
+    "throttle": ("Throttle", "%", 0, MAX_THROTTLE_PCT, 15, 3,
+                 lambda v: v, lambda t: t),
+    "amps":     ("Amps per motor", "A", 0, MAX_AMPS, 2, 0.4,
+                 throttle_for_amps, estimate_amps),
+}
+
+
 # USB connection
 
 
@@ -172,7 +212,8 @@ class Link:
 
 # App
 
-FIELDS = ["time_s", "gimbal1_deg", "gimbal2_deg", "throttle1_pct", "throttle2_pct", "armed",
+FIELDS = ["time_s", "gimbal1_deg", "gimbal2_deg", "throttle1_pct", "throttle2_pct",
+          "esc1_us", "esc2_us", "armed",
           "rpm1_est", "rpm2_est",
           "thrust1_g_est", "thrust2_g_est", "amps1_est", "amps2_est"]
 
@@ -231,13 +272,24 @@ class App:
         controls = ttk.Frame(body, width=260)
         controls.pack(side="left", fill="y", padx=(0, 8))
 
-        ttk.Label(controls, text=f"Throttle, both props (max {MAX_THROTTLE_PCT} %)").pack(anchor="w")
-        self.throttle_var = tk.DoubleVar(value=0)
-        ttk.Scale(controls, from_=0, to=MAX_THROTTLE_PCT, variable=self.throttle_var,
-                  orient="horizontal", length=240).pack(anchor="w")
+        # Power slider: throttle % or amps per motor (throttle_var holds the slider value)
+        mode_row = ttk.Frame(controls)
+        mode_row.pack(anchor="w")
+        self.mode_var = tk.StringVar(value="us")
+        self.prev_mode = "us"
+        for value, text in (("us", "ESC us"), ("throttle", "Throttle %"), ("amps", "Amps")):
+            ttk.Radiobutton(mode_row, text=text, value=value, variable=self.mode_var,
+                            command=self.change_mode).pack(side="left", padx=(0, 8))
+        self.power_title = ttk.Label(controls)
+        self.power_title.pack(anchor="w")
+        self.throttle_var = tk.DoubleVar(value=self.power_min())
+        self.power_scale = ttk.Scale(controls, from_=self.power_min(), to=self.power_max(),
+                                     variable=self.throttle_var, orient="horizontal", length=240)
+        self.power_scale.pack(anchor="w")
         self.throttle_entry_var = self._value_box(controls, self.set_throttle_from_box)
         self.throttle_lbl = ttk.Label(controls, text="0 %", wraplength=240)
         self.throttle_lbl.pack(anchor="w", pady=(0, 10))
+        self._update_power_title()
 
         # "Both" slider sets both gimbals. Gimbal 1 / 2 sliders set just one.
         ttk.Label(controls, text="Tilt: both gimbals (deg)").pack(anchor="w")
@@ -345,9 +397,41 @@ class App:
         return v
 
     def set_throttle_from_box(self):
-        v = self._read_box(self.throttle_entry_var, 0, MAX_THROTTLE_PCT, "Throttle")
+        v = self._read_box(self.throttle_entry_var, self.power_min(), self.power_max(),
+                           self.mode()[0])
         if v is not None:
             self.throttle_var.set(v)
+
+    # Power modes: ESC us / Throttle % / Amps
+
+    def mode(self, name=None):
+        return MODES[name or self.mode_var.get()]
+
+    def power_min(self):
+        return self.mode()[2]
+
+    def power_max(self):
+        return self.mode()[3]
+
+    def throttle_now(self):
+        """Throttle % to send, from the slider (converted from the mode's units)."""
+        t = self.mode()[6](self.throttle_var.get())
+        return min(MAX_THROTTLE_PCT, max(0.0, t))
+
+    def change_mode(self):
+        # Keep the props at the same speed when switching
+        pct = self.mode(self.prev_mode)[6](self.throttle_var.get())
+        self.prev_mode = self.mode_var.get()
+        v = self.mode()[7](pct)
+        self.power_scale.configure(from_=self.power_min(), to=self.power_max())
+        self.throttle_var.set(round(min(self.power_max(), max(self.power_min(), v)), 2))
+        self.throttle_entry_var.set("")
+        self._update_power_title()
+        self.root.focus_set()
+
+    def _update_power_title(self):
+        title, unit, lo, hi = self.mode()[:4]
+        self.power_title.configure(text=f"{title}, both props ({lo}-{hi} {unit})")
 
     def set_tilt_from_box(self):
         v = self._read_box(self.tilt_entry_var, -GIMBAL_LIMIT_DEG, GIMBAL_LIMIT_DEG, "Tilt")
@@ -423,9 +507,9 @@ class App:
         thr = ("Up" in self.held) - ("Down" in self.held)
         tilt = ("Right" in self.held) - ("Left" in self.held)
         if thr:
-            rate = THROTTLE_RATE_SLOW if self.shift else THROTTLE_RATE
+            rate = self.mode()[5] if self.shift else self.mode()[4]
             v = self.throttle_var.get() + thr * rate * dt
-            self.throttle_var.set(min(MAX_THROTTLE_PCT, max(0.0, v)))
+            self.throttle_var.set(min(self.power_max(), max(self.power_min(), v)))
         if tilt:
             rate = TILT_RATE_SLOW if self.shift else TILT_RATE
             step = tilt * rate * dt          # move both by the same amount
@@ -492,7 +576,7 @@ class App:
         self.link.send("a")
 
     def stop(self):
-        self.throttle_var.set(0)
+        self.throttle_var.set(self.power_min())
         self.cmd_throttle = 0
         if self.link:
             self.link.send("x")
@@ -534,13 +618,13 @@ class App:
 
     def tick_control(self):
         """Read the sliders (keys move them too), send to the Arduino."""
-        throttle = self.throttle_var.get()
-        self.cmd_throttle = round(throttle, 1)
+        self.cmd_throttle = round(self.throttle_now(), 1)
         g1, g2 = (round(g.get(), 1) for g in self.g_vars)
         self.cmd_tilt = (g1 + g2) / 2
         t = self.cmd_throttle
-        self.throttle_lbl.configure(text=f"{t:.1f} %   est. per motor: ~{estimate_rpm(t):.0f} RPM, "
-                                         f"{estimate_thrust_g(t):.0f} g, {estimate_amps(t):.1f} A")
+        self.throttle_lbl.configure(text=f"{pct_to_us(t):.0f} us = {t:.1f} %\n"
+                                         f"est. per motor: ~{estimate_amps(t):.1f} A, "
+                                         f"~{estimate_rpm(t):.0f} RPM, {estimate_thrust_g(t):.0f} g")
         self.tilt_lbl.configure(text=f"gimbal 1: {g1:+.1f} deg    gimbal 2: {g2:+.1f} deg")
 
         if self.link:
@@ -582,7 +666,8 @@ class App:
             self.t0_ms = ms
         self.armed = armed
         row = {"time_s": (ms - self.t0_ms) / 1000.0, "gimbal1_deg": g1, "gimbal2_deg": g2,
-               "throttle1_pct": t1, "throttle2_pct": t2, "armed": int(armed),
+               "throttle1_pct": t1, "throttle2_pct": t2,
+               "esc1_us": round(pct_to_us(t1)), "esc2_us": round(pct_to_us(t2)), "armed": int(armed),
                "rpm1_est": round(estimate_rpm(t1)), "rpm2_est": round(estimate_rpm(t2)),
                "thrust1_g_est": round(estimate_thrust_g(t1)), "thrust2_g_est": round(estimate_thrust_g(t2)),
                "amps1_est": round(estimate_amps(t1), 2), "amps2_est": round(estimate_amps(t2), 2)}
