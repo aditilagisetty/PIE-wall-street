@@ -73,8 +73,10 @@ const int NUM_STEPS = sizeof(STEPS) / sizeof(STEPS[0]);
 // Smoothing (same idea as test_rig)
 const float GIMBAL_SMOOTH_S = 0.15;
 const float GIMBAL_SPEED_DEG_PER_S = 120.0;
-const float THROTTLE_SMOOTH_S = 0.3;
-const float THROTTLE_SPEED_PCT_PER_S = 50.0;
+// Prop ramp: how long it takes to go from off to DRIVE_POWER (and back down).
+// The props never jump. The ramp time is part of each drive step's time.
+const float RAMP_UP_S   = 1.5;
+const float RAMP_DOWN_S = 1.0;
 
 // Hardware
 
@@ -152,6 +154,13 @@ float stepThrottle(float power) {
   return constrain(t, 0, MAX_THROTTLE_PCT);
 }
 
+// Steady ramp: off -> DRIVE_POWER takes RAMP_UP_S, DRIVE_POWER -> off takes RAMP_DOWN_S
+float rampThrottle(float now, float target, float dtS) {
+  float drivePct = max(stepThrottle(DRIVE_POWER), 1.0);
+  float maxStep = (target > now ? drivePct / RAMP_UP_S : drivePct / RAMP_DOWN_S) * dtS;
+  return now + constrain(target - now, -maxStep, maxStep);
+}
+
 bool stopPressed() {
   return digitalRead(STOP_PIN) == LOW;
 }
@@ -174,9 +183,7 @@ bool runFor(unsigned long ms, float tiltTarget, float throttleTarget) {
     last = now;
     tiltNow = glide(tiltNow, constrain(tiltTarget, -GIMBAL_LIMIT_DEG, GIMBAL_LIMIT_DEG),
                     dtS, GIMBAL_SMOOTH_S, GIMBAL_SPEED_DEG_PER_S);
-    throttleNow = glide(throttleNow, constrain(throttleTarget, 0, MAX_THROTTLE_PCT),
-                        dtS, THROTTLE_SMOOTH_S, THROTTLE_SPEED_PCT_PER_S);
-    if (throttleTarget == 0 && throttleNow < 0.05) throttleNow = 0;
+    throttleNow = rampThrottle(throttleNow, constrain(throttleTarget, 0, MAX_THROTTLE_PCT), dtS);
     writeGimbals();
     writeEscs();
     digitalWrite(LED_PIN, throttleNow > 0 ? HIGH : LOW);   // LED on = props spinning
