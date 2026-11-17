@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "wallstreet")(type "KiCad")(uri "${KIPRJMOD}/wallstreet.kicad_sym")(options "")(descr "Wall Street custom parts"))
+)
