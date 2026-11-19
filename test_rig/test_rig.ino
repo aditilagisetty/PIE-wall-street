@@ -1,29 +1,39 @@
 /*
- * Test Rig: props + gimbals
+ * Test Rig: props + gimbals + steering
  *
- * Controls 2 props and 2 gimbals. Use the laptop app (rig_control.py),
- * or type commands in the Serial Monitor (115200 baud, "Newline").
+ * Controls 2 props, 2 gimbals and 2 steering servos (front wheels).
+ * Use the laptop app (rig_control.py), or type commands in the
+ * Serial Monitor (115200 baud, "Newline").
  *
  * Motors: T-Motor V3115 900KV. Very strong! Clamp the rig down and start slow.
  *
  * Wiring:
  *   Gimbal 1 -> D9       Gimbal 2 -> D10
  *   ESC 1 signal -> D5   ESC 2 signal -> D6   (props plug into the ESCs)
+ *   Steer 1 (front wheel 1) -> D3   Steer 2 (front wheel 2) -> D4
  *   Connect all the grounds together.
  *   Don't connect the ESC red wires to the Arduino.
  *
  * Commands:
- *   s 10 10 20 20   gimbal 1 angle, gimbal 2 angle, prop 1 %, prop 2 %
+ *   s 10 10 20 20 15  gimbal 1, gimbal 2, prop 1 %, prop 2 %, steering
+ *                     (steering is optional; leave it off and it stays put)
  *   a               arm the props (throttle must be 0)
  *   x               STOP
  *   z 1 3.5         make 3.5 deg (from servo middle) gimbal 1's new zero
  *   z 2 -2          make -2 deg gimbal 2's new zero
- *   z               print both zeros
+ *   z 3 4           make 4 deg steer 1's new zero (wheel straight)
+ *   z 4 -1          make -1 deg steer 2's new zero
+ *   z               print all zeros
  *   Zeros are saved on the Arduino, so they stay after unplugging.
  *   All other angles are measured from these zeros.
  *
  * Gimbal 2 is mounted on the other side of the car, so it turns the opposite
  * way (GIMBAL_DIR). Same angle in = both props tilt the same way.
+ *
+ * Steering: 0 = straight, + = turn one way, - = turn the other.
+ * The two steering servos are mirror images, so steer 2 is flipped
+ * (STEER_DIR). Same angle in = both wheels point the same way.
+ * If the car turns the wrong way, swap the signs in STEER_DIR.
  *
  * Safety:
  *   - Props start off.
@@ -31,7 +41,7 @@
  *   - Throttle and gimbals glide smoothly to new values. STOP is instant.
  *
  * Sends back 20 times a second:
- *   T,time,gimbal1,gimbal2,prop1 %,prop2 %,armed
+ *   T,time,gimbal1,gimbal2,prop1 %,prop2 %,armed,steering
  */
 
 #include <Servo.h>
@@ -70,10 +80,17 @@ const float THROTTLE_RAMP_PCT_PER_S = 100.0;
 // Stop props if no command for this long
 const unsigned long COMMAND_TIMEOUT_MS = 500;
 
+// Steering
+const int STEER_DIR[2] = {1, -1};        // steer 2 is a mirror image of steer 1
+const float STEER_LIMIT_DEG = 45.0;      // max turn each way (raise if your linkage allows)
+const float STEER_SMOOTH_S = 0.1;
+const float STEER_SPEED_DEG_PER_S = 180.0;
+
 // Pins
 
 const int GIMBAL_PINS[2] = {9, 10};
 const int ESC_PINS[2]    = {5, 6};
+const int STEER_PINS[2]  = {3, 4};
 
 // Signal ranges
 
@@ -93,6 +110,11 @@ const unsigned long TELEMETRY_MS = 50;
 
 Servo gimbals[2];
 Servo escs[2];
+Servo steers[2];
+
+float steerZero[2]  = {0, 0};          // each steering servo's zero = wheel straight
+float steerTarget   = 0;               // steering angle asked for
+float steerNow      = 0;               // steering angle right now (gliding to target)
 
 float gimbalZero[2]     = {0, 0};      // each gimbal's zero (from servo middle)
 float gimbalTarget[2]   = {0, 0};      // gimbal angle asked for (from zero)
@@ -117,39 +139,64 @@ struct SavedZeros {
   float zero[2];
 };
 
-void loadZeros() {
+// Steering zeros are saved right after the gimbal zeros (demo_drive only reads the gimbal ones)
+const int  STEER_EEPROM_ADDR = EEPROM_ADDR + sizeof(SavedZeros);
+const long STEER_EEPROM_MAGIC = 0x53544552L;  // "STER"
+
+// Read one saved set of zeros. Returns false if nothing valid was saved.
+bool readZeros(int addr, long magic, float out[2]) {
   SavedZeros z;
-  EEPROM.get(EEPROM_ADDR, z);
-  bool ok = z.magic == EEPROM_MAGIC;
-  for (int i = 0; i < 2; i++) {
-    ok = ok && !isnan(z.zero[i]) && fabs(z.zero[i]) <= ZERO_LIMIT_DEG;
+  EEPROM.get(addr, z);
+  bool ok = z.magic == magic;
+  for (int i = 0; i < 2; i++) ok = ok && !isnan(z.zero[i]) && fabs(z.zero[i]) <= ZERO_LIMIT_DEG;
+  if (ok) for (int i = 0; i < 2; i++) out[i] = z.zero[i];
+  return ok;
+}
+
+void writeZeros(int addr, long magic, const float in[2]) {
+  SavedZeros z;
+  z.magic = magic;
+  for (int i = 0; i < 2; i++) z.zero[i] = in[i];
+  EEPROM.put(addr, z);
+}
+
+void loadZeros() {
+  if (!readZeros(EEPROM_ADDR, EEPROM_MAGIC, gimbalZero)) {
+    for (int i = 0; i < 2; i++) gimbalZero[i] = DEFAULT_ZERO_DEG[i];
   }
-  for (int i = 0; i < 2; i++) gimbalZero[i] = ok ? z.zero[i] : DEFAULT_ZERO_DEG[i];
+  if (!readZeros(STEER_EEPROM_ADDR, STEER_EEPROM_MAGIC, steerZero)) {
+    steerZero[0] = steerZero[1] = 0;
+  }
 }
 
 void saveZeros() {
-  SavedZeros z;
-  z.magic = EEPROM_MAGIC;
-  for (int i = 0; i < 2; i++) z.zero[i] = gimbalZero[i];
-  EEPROM.put(EEPROM_ADDR, z);
+  writeZeros(EEPROM_ADDR, EEPROM_MAGIC, gimbalZero);
+  writeZeros(STEER_EEPROM_ADDR, STEER_EEPROM_MAGIC, steerZero);
 }
 
-// The app reads this line
+// The app reads this line: gimbal 1, gimbal 2, steer 1, steer 2
 void printZeros() {
   Serial.print(F("# zero: "));
-  Serial.print(gimbalZero[0], 1);
-  Serial.print(' ');
-  Serial.println(gimbalZero[1], 1);
+  Serial.print(gimbalZero[0], 1); Serial.print(' ');
+  Serial.print(gimbalZero[1], 1); Serial.print(' ');
+  Serial.print(steerZero[0], 1);  Serial.print(' ');
+  Serial.println(steerZero[1], 1);
 }
 
 // outputs
 
+// Degrees from the servo middle -> pulse
+void writeServo(Servo &s, float deg) {
+  int us = (int)(SERVO_CENTER_US + deg * SERVO_US_PER_DEG + 0.5);
+  s.writeMicroseconds(constrain(us, SERVO_MIN_US, SERVO_MAX_US));
+}
+
 void writeGimbals() {
-  for (int i = 0; i < 2; i++) {
-    float deg = gimbalZero[i] + GIMBAL_DIR[i] * gimbalNow[i];
-    int us = (int)(SERVO_CENTER_US + deg * SERVO_US_PER_DEG + 0.5);
-    gimbals[i].writeMicroseconds(constrain(us, SERVO_MIN_US, SERVO_MAX_US));
-  }
+  for (int i = 0; i < 2; i++) writeServo(gimbals[i], gimbalZero[i] + GIMBAL_DIR[i] * gimbalNow[i]);
+}
+
+void writeSteering() {
+  for (int i = 0; i < 2; i++) writeServo(steers[i], steerZero[i] + STEER_DIR[i] * steerNow);
 }
 
 void writeEscs() {
@@ -191,6 +238,11 @@ void moveGimbals(float dtS) {
   writeGimbals();
 }
 
+void moveSteering(float dtS) {
+  steerNow = glide(steerNow, steerTarget, dtS, STEER_SMOOTH_S, STEER_SPEED_DEG_PER_S);
+  writeSteering();
+}
+
 // commands
 
 void handleLine(char *line) {
@@ -210,6 +262,9 @@ void handleLine(char *line) {
       gimbalTarget[i]   = constrain(v[i],     -GIMBAL_LIMIT_DEG, GIMBAL_LIMIT_DEG);
       throttleTarget[i] = constrain(v[i + 2], 0, MAX_THROTTLE_PCT);
     }
+    char *end;
+    float steer = strtod(p, &end);                  // optional 5th number
+    if (end != p) steerTarget = constrain(steer, -STEER_LIMIT_DEG, STEER_LIMIT_DEG);
     lastCommandMs = millis();
   } else if (c == 'a') {
     if (throttleTarget[0] > 0 || throttleTarget[1] > 0) {
@@ -229,13 +284,16 @@ void handleLine(char *line) {
     if (end == p) { printZeros(); return; }       // just "z"
     p = end;
     float deg = strtod(p, &end);
-    if (end == p || (which != 1 && which != 2)) {
-      Serial.println(F("# usage: z <1 or 2> <degrees>"));
+    if (end == p || which < 1 || which > 4) {
+      Serial.println(F("# usage: z <1-2 gimbal, 3-4 steer> <degrees>"));
       return;
     }
-    gimbalZero[which - 1] = constrain(deg, -ZERO_LIMIT_DEG, ZERO_LIMIT_DEG);
+    deg = constrain(deg, -ZERO_LIMIT_DEG, ZERO_LIMIT_DEG);
+    if (which <= 2) gimbalZero[which - 1] = deg;
+    else            steerZero[which - 3] = deg;
     saveZeros();
     writeGimbals();
+    writeSteering();
     printZeros();
   } else if (c != '\0') {
     Serial.println(F("# unknown command (s a x z)"));
@@ -266,7 +324,8 @@ void sendTelemetry() {
   Serial.print(gimbalNow[1], 1);       Serial.print(',');
   Serial.print(armed ? throttle[0] : 0, 1); Serial.print(',');
   Serial.print(armed ? throttle[1] : 0, 1); Serial.print(',');
-  Serial.println(armed ? 1 : 0);
+  Serial.print(armed ? 1 : 0);         Serial.print(',');
+  Serial.println(steerNow, 1);
 }
 
 // ---------- Main ----------
@@ -281,6 +340,8 @@ void setup() {
   loadZeros();
   for (int i = 0; i < 2; i++) gimbals[i].attach(GIMBAL_PINS[i], SERVO_MIN_US, SERVO_MAX_US);
   writeGimbals();
+  for (int i = 0; i < 2; i++) steers[i].attach(STEER_PINS[i], SERVO_MIN_US, SERVO_MAX_US);
+  writeSteering();
 
   lastLoopMs = millis();
   Serial.println(F("# test rig ready (disarmed)"));
@@ -302,6 +363,7 @@ void loop() {
   rampThrottle(dtS);
   writeEscs();
   moveGimbals(dtS);
+  moveSteering(dtS);
 
   if (now - lastTelemetryMs >= TELEMETRY_MS) {
     lastTelemetryMs = now;

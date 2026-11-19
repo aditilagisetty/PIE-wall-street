@@ -2,12 +2,12 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid "3793e757-7e8b-4cc1-8fbf-c7f705cb86e5")
+	(uuid "738b1610-adf9-4978-a457-9b4cf5cbf3b2")
 	(paper "A3")
 	(title_block
 		(title "Wall Street - Car Wiring (Teensy 4.0 + Pi Zero 2 W)")
-		(date "2026-11-17")
-		(rev "D")
+		(date "2026-11-18")
+		(rev "E")
 		(comment 1 "Power: 6S LiPo, 2x Pololu D36V28F5 5 V modules (logic, servo)")
 		(comment 2 "Control: laptop -> Wi-Fi -> Pi Zero 2 W -> UART -> Teensy 4.0")
 	)
@@ -2504,7 +2504,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "db1e3291-a997-4d31-a2aa-edbef08b039d")
+		(uuid "88bc80c0-fc48-452c-8d73-5e89d92a3fa0")
 		(property "Reference" "BT1"
 			(at 27.94 73.66 0)
 			(effects
@@ -2542,14 +2542,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "7f1a2df2-9f8f-420c-86e5-49ba97542198")
+			(uuid "f018cbda-24b1-4833-b59b-4d2a98ca2b3a")
 		)
 		(pin "2"
-			(uuid "b18e9301-452a-4653-b73d-fc8296865da3")
+			(uuid "0e62120d-4a5f-4ad7-9e87-8ea765478e22")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "BT1")
 					(unit 1)
 				)
@@ -2565,7 +2565,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8efc2d5d-5678-405b-a258-df205a7883a5")
+		(uuid "3171bd7c-3491-4505-b5eb-4db910da5f3b")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2575,7 +2575,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "8e41d6ea-0a9a-4845-9d92-c515f19c6cf4")
+		(uuid "11d110f5-0873-4680-984b-42c31a3638b8")
 		(property "Reference" "#PWR001"
 			(at 25.4 90.17 0)
 			(effects
@@ -2612,11 +2612,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "ca23f995-97e3-4673-8f22-d09682bd8035")
+			(uuid "158d9bf7-6de1-4e00-81e8-cceff7d0bb58")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#PWR001")
 					(unit 1)
 				)
@@ -2631,7 +2631,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "baf7d96f-df12-4ece-b555-8d503c8165a5")
+		(uuid "2ecb9a76-62e2-4102-a083-8b4a4e6050e5")
 		(property "Reference" "S1"
 			(at 40.64 47.625 0)
 			(effects
@@ -2667,14 +2667,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "4153da2d-a6dc-4733-b80f-fa9be658c03d")
+			(uuid "3e6293f7-ed1b-44f0-8788-a70c500999ab")
 		)
 		(pin "2"
-			(uuid "a8ad25f7-7b8f-4030-bfca-e494f88c1071")
+			(uuid "8de9db24-1dd6-4889-a476-e4c40df499e2")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "S1")
 					(unit 1)
 				)
@@ -2690,7 +2690,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0732dc21-1a39-444f-863b-edb8c569fc17")
+		(uuid "81ef0d8e-7ddf-4aed-8152-e26963a0c9a5")
 	)
 	(wire
 		(pts
@@ -2701,7 +2701,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "17f7fca7-b453-4f37-ba82-6965fbd36225")
+		(uuid "97943f17-29a6-4264-9c32-017be4b8536b")
 	)
 	(wire
 		(pts
@@ -2712,7 +2712,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "23e879ce-a2e9-4556-a869-688b5f00df9a")
+		(uuid "c4a4ae11-9c6f-441a-8225-ba5b29c23275")
 	)
 	(wire
 		(pts
@@ -2723,7 +2723,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "90548cb9-25b6-411b-b4df-1d74c62a7f91")
+		(uuid "c634dd5b-ef8e-461f-94d1-877e0bd768bf")
 	)
 	(label "VBAT"
 		(at 53.34 30.48 0)
@@ -2733,7 +2733,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "c29b6d4b-5493-4a7e-be54-0c13d173a230")
+		(uuid "3e719b74-7fce-4523-a781-39515434a188")
 	)
 	(symbol
 		(lib_id "wallstreet:ESC")
@@ -2743,7 +2743,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2cd1863b-9c74-4110-83c0-e02c0228217a")
+		(uuid "4329391a-6af9-4370-810c-3665c6926a0d")
 		(property "Reference" "U2"
 			(at 78.74 52.07 0)
 			(effects
@@ -2781,32 +2781,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "37119e6d-4a93-4c94-8151-9ac299bc1df1")
+			(uuid "572018f7-0fdf-4033-a5ce-a5b4ff93b6f7")
 		)
 		(pin "2"
-			(uuid "60888397-4722-41ef-982b-7d512653735a")
+			(uuid "b3d6bbfa-176b-450b-bdd3-7b7a933f4392")
 		)
 		(pin "3"
-			(uuid "9d6e5658-111b-456c-af3d-c44c2dbaa149")
+			(uuid "f2290222-7f89-4896-975b-95546460ad5b")
 		)
 		(pin "4"
-			(uuid "592067a9-ea76-48dc-8f0f-1ed0859625df")
+			(uuid "973f483a-e052-4c7f-a011-2aa1fc89c5cc")
 		)
 		(pin "5"
-			(uuid "84753e55-be13-40c7-8b98-35e7182b4d18")
+			(uuid "d22397eb-6e0e-4676-996a-02109f1102cb")
 		)
 		(pin "6"
-			(uuid "fcc32d68-337c-42f0-a292-9638158e1114")
+			(uuid "8b9f5d5c-8ec5-4556-b83c-1754d6589c61")
 		)
 		(pin "7"
-			(uuid "b6ea0f51-3c7c-4535-ac52-1ce3d2b5ed1a")
+			(uuid "dc12785e-b016-40f4-85a4-c0ab8f9acfa3")
 		)
 		(pin "8"
-			(uuid "68ad3bc8-a8e5-4ea9-a49d-6ed9258789fc")
+			(uuid "bf3588e4-2ceb-4c0a-aa79-d733800a1006")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "U2")
 					(unit 1)
 				)
@@ -2822,7 +2822,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c458b0bf-e8ae-45d6-96fd-044e887201d1")
+		(uuid "ee21ac4f-0270-4ae9-b006-8f5481810d0d")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2832,7 +2832,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "cf605e1a-3116-447a-920e-4e0336fea96b")
+		(uuid "e0455c4f-c282-41e5-a0a9-6ade69c35612")
 		(property "Reference" "#PWR002"
 			(at 73.66 64.77 0)
 			(effects
@@ -2869,11 +2869,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "01d6ea88-c9d2-4d9e-8f0e-17255f0d3b1e")
+			(uuid "2618ef6a-8972-49a7-80a5-94dbfe959d7a")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#PWR002")
 					(unit 1)
 				)
@@ -2889,7 +2889,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2a0dd42a-8763-4c55-aee7-6cf7d803a3a4")
+		(uuid "b36f9332-5945-436e-9c2e-6ab6a6106dac")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2899,7 +2899,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e6e63f81-252d-4ef0-a49a-f65531b63f36")
+		(uuid "883cf943-f920-44c6-9c94-6f0988d3ccc8")
 		(property "Reference" "#PWR003"
 			(at 86.36 85.09 0)
 			(effects
@@ -2936,11 +2936,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "b702963b-f5a4-429d-bc42-6193d6d6c815")
+			(uuid "253979f6-4d31-44b2-9431-49eb2a06d385")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#PWR003")
 					(unit 1)
 				)
@@ -2949,7 +2949,7 @@
 	)
 	(no_connect
 		(at 101.6 66.04)
-		(uuid "ded42e82-bb8b-4fb9-a418-05405c0503e9")
+		(uuid "8ac04d46-16c9-4501-abb5-106ca71a0325")
 	)
 	(symbol
 		(lib_id "wallstreet:BLDC_Motor")
@@ -2959,7 +2959,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c0be46bb-e8a2-4dca-b032-21b1d2f35c29")
+		(uuid "93a488f4-216c-4c78-af01-9f21bba76d7c")
 		(property "Reference" "M2"
 			(at 125.73 57.15 0)
 			(effects
@@ -2997,17 +2997,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "a8f76f93-a00e-411d-a185-424b4c19b7d4")
+			(uuid "8d573ddd-503a-438b-bbab-6fb599f57fe4")
 		)
 		(pin "2"
-			(uuid "41e111d8-eeeb-4c85-ba7f-b80eb7d73e2e")
+			(uuid "bf3c2082-8997-48c6-98d9-d7f60741cedb")
 		)
 		(pin "3"
-			(uuid "d3b162c5-8b6f-454c-814a-0e6f272910ab")
+			(uuid "b7da01a3-350d-4b36-8247-2e67a122593a")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "M2")
 					(unit 1)
 				)
@@ -3023,7 +3023,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2ed85d8a-141d-4cc6-a075-e30f0fcca19d")
+		(uuid "872e4daa-0aa0-40b2-bfb2-23d9176aac76")
 	)
 	(wire
 		(pts
@@ -3034,7 +3034,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a91361f0-11ca-4cd3-9b94-7f5b5a8c9d55")
+		(uuid "a57efb36-534b-4749-860f-054047815b1e")
 	)
 	(wire
 		(pts
@@ -3045,7 +3045,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6a608c0a-97b4-45d5-9310-4a8995e11307")
+		(uuid "114da2b1-261e-48e0-ac10-14e56216b408")
 	)
 	(wire
 		(pts
@@ -3056,7 +3056,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "33f668d5-a3e9-4210-a987-1880a3b320d0")
+		(uuid "58b5f937-13db-4c77-80e9-cca2bd880c82")
 	)
 	(wire
 		(pts
@@ -3067,13 +3067,13 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0cf7a4a5-4966-4378-a3f7-f5e114f068a6")
+		(uuid "05f896cc-2ef4-46ae-b80d-18af4ce3dc06")
 	)
 	(junction
 		(at 71.12 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "96caa2ba-5908-42cc-b98e-7d597ccc1c24")
+		(uuid "628e8623-0e4a-4cb0-b523-c1c47d1d0a2b")
 	)
 	(symbol
 		(lib_id "wallstreet:ESC")
@@ -3083,7 +3083,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e7f0bf09-2931-46e1-99a8-f37681ab623d")
+		(uuid "bbb28417-c400-49a7-bd1c-81095e5afc1d")
 		(property "Reference" "U1"
 			(at 162.56 52.07 0)
 			(effects
@@ -3121,32 +3121,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "f1052b25-c672-4b98-89e4-58c32212ec42")
+			(uuid "dd0c1b5e-9c2e-4337-bd93-a151102de7c9")
 		)
 		(pin "2"
-			(uuid "a0e40de1-1430-4872-bac1-1ef395f5d512")
+			(uuid "6feda516-f092-45f9-ad9d-0767af442a13")
 		)
 		(pin "3"
-			(uuid "85d6f92b-5079-4ed4-b62c-c0bc0943269b")
+			(uuid "40151d05-09f7-4577-a46d-3a79a46f8abb")
 		)
 		(pin "4"
-			(uuid "91a552c9-769b-4c04-b39b-f19d284e1aa4")
+			(uuid "195d4c77-019e-456e-aec7-537d966b0892")
 		)
 		(pin "5"
-			(uuid "c5333ab0-e83e-473e-a0f2-b4893bc00597")
+			(uuid "8ce88daa-9e1e-4c39-a228-8789ffc9c690")
 		)
 		(pin "6"
-			(uuid "edbe9b46-19e6-4747-8a2c-0724d589f442")
+			(uuid "6b83ee4e-8bab-4b4f-bcdb-f2841a2ec853")
 		)
 		(pin "7"
-			(uuid "00666dcf-c347-4f00-8838-1fa168fd5576")
+			(uuid "e37994e3-fe80-4175-9eb2-c7b4e4b0764b")
 		)
 		(pin "8"
-			(uuid "de0d33c7-e86c-4de1-8771-b7c197fe4476")
+			(uuid "1ca3af27-1acc-4e66-9013-277b0a7291d0")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "U1")
 					(unit 1)
 				)
@@ -3162,7 +3162,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "251fbac6-6217-4643-aa1a-a61ff3e11f79")
+		(uuid "67c1815f-68fd-41b8-a8c7-fecaaf3cf0cf")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -3172,7 +3172,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "77ccdc2e-5be9-4ac1-8a80-5dd05b3b20d5")
+		(uuid "2e672627-9d8f-429b-98e9-3cab88ebfea0")
 		(property "Reference" "#PWR004"
 			(at 157.48 64.77 0)
 			(effects
@@ -3209,11 +3209,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "6a8044dc-4aac-4502-b1c8-00860ce41275")
+			(uuid "91f1206f-4f95-48fa-a664-589354649529")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#PWR004")
 					(unit 1)
 				)
@@ -3229,7 +3229,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ba454c83-e06a-4077-aeb3-6395211f6ed9")
+		(uuid "0da553a9-7e94-44e2-8d90-20053f6d4169")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -3239,7 +3239,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "56431549-16be-4342-999d-2c59035ffc0e")
+		(uuid "f6b4a30f-0b2a-4256-98bf-7dfcb6e0bc55")
 		(property "Reference" "#PWR005"
 			(at 170.18 85.09 0)
 			(effects
@@ -3276,11 +3276,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "48220344-4e2e-4ba8-9b13-acdcae77e0af")
+			(uuid "57a85115-e5bc-4448-9d1a-8068f67bd5ea")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#PWR005")
 					(unit 1)
 				)
@@ -3289,7 +3289,7 @@
 	)
 	(no_connect
 		(at 185.42 66.04)
-		(uuid "a2c305a8-ddcd-4939-9529-c33f2b536bc5")
+		(uuid "bfa8f916-2800-4f68-a65c-cba3a66c9da8")
 	)
 	(symbol
 		(lib_id "wallstreet:BLDC_Motor")
@@ -3299,7 +3299,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4c66fa12-902f-4419-9753-5f3de879a9c5")
+		(uuid "ab714fd7-1ef4-4ae1-988a-f0297aafce2a")
 		(property "Reference" "M1"
 			(at 209.55 57.15 0)
 			(effects
@@ -3337,17 +3337,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "282e8c17-d659-431a-991d-f6b0e3003f49")
+			(uuid "f6224098-aa1f-4606-8249-53b71d87ad33")
 		)
 		(pin "2"
-			(uuid "926d1101-3790-460d-8078-9dec271ad7d2")
+			(uuid "ddae945e-6bc9-40da-a543-9e76bc1e742d")
 		)
 		(pin "3"
-			(uuid "ed60deb9-d95a-46da-9ea8-bef30d726278")
+			(uuid "d3657eea-02d6-4fcc-abac-b753f497838f")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "M1")
 					(unit 1)
 				)
@@ -3363,7 +3363,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "353554ee-af25-4f91-85ea-526edb565f5d")
+		(uuid "2c31980b-2b93-4a4a-8fd5-5f84782ee9dd")
 	)
 	(wire
 		(pts
@@ -3374,7 +3374,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f26e9070-5850-4893-bdbe-2e06ae1f3631")
+		(uuid "8b6b28a0-1f5a-47c7-81b7-69d1b3e3438f")
 	)
 	(wire
 		(pts
@@ -3385,7 +3385,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "665b407e-88a7-4e05-8339-4f5a75b9cce0")
+		(uuid "bcf3764e-150c-480b-b40e-4c87ed1147bc")
 	)
 	(wire
 		(pts
@@ -3396,7 +3396,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6ddb3761-4dbe-4bfb-be2a-3bb4e082f602")
+		(uuid "6b3564e7-748c-43a6-ac96-d18d225e830e")
 	)
 	(wire
 		(pts
@@ -3407,7 +3407,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "20aa12f1-7c6e-448f-9f89-8cd433850b21")
+		(uuid "6a75bce9-b142-4876-8a4c-f11971315a99")
 	)
 	(wire
 		(pts
@@ -3418,7 +3418,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d053d8bc-a3fe-4384-bc6f-0a8de5df20bf")
+		(uuid "bb22c893-ce1f-4a97-895a-bc3d6630ce53")
 	)
 	(wire
 		(pts
@@ -3429,7 +3429,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f7054ba1-dc23-4794-92d8-0db739d05d90")
+		(uuid "28a5fddf-53b8-4d8e-b429-4571d4a254e2")
 	)
 	(wire
 		(pts
@@ -3440,7 +3440,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6bf67660-a82a-460e-80b0-42742027b361")
+		(uuid "78c64fcd-389f-465e-a0b2-cb83e3806c03")
 	)
 	(wire
 		(pts
@@ -3451,13 +3451,13 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "115185b4-0b8d-4d4e-ad1a-54886c4e86c1")
+		(uuid "0cf2d80d-c835-461a-ad11-15148539e0de")
 	)
 	(junction
 		(at 53.34 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "899bfbce-6565-4e91-b823-f7dbd6decbef")
+		(uuid "2a85c21a-69b8-4dd2-ad73-66329447665a")
 	)
 	(symbol
 		(lib_id "wallstreet:Buck_5V_Module")
@@ -3467,7 +3467,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6fd12ef6-b13d-4d2c-8b00-d57871ef3468")
+		(uuid "1cac1647-961f-413d-9114-0e995b9dfa95")
 		(property "Reference" "U3"
 			(at 60.96 127 0)
 			(effects
@@ -3505,17 +3505,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "fe45b014-886e-48ed-abfd-1cc969b5229c")
+			(uuid "e0104a2c-3d9d-4a68-9621-0a3caf0252ac")
 		)
 		(pin "2"
-			(uuid "30bb19c7-8ba2-4979-b995-ab504bd23bc7")
+			(uuid "422a1cdc-ff26-4965-80a7-3e2651fdc5e2")
 		)
 		(pin "3"
-			(uuid "2facdf8d-73fc-451c-8a1c-5db8d717a76f")
+			(uuid "de5186cf-ca21-4afa-aa79-2aca2bb6e696")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "U3")
 					(unit 1)
 				)
@@ -3531,7 +3531,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "58317815-71c0-44cf-bc26-16df0610752e")
+		(uuid "624443a9-b4ac-434e-a36d-d7ad8896d75f")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -3541,7 +3541,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a3900459-1a97-47f1-ada6-cff46d7e9dda")
+		(uuid "8d6d67e4-66f7-47a9-b403-6f04d5877b36")
 		(property "Reference" "#PWR006"
 			(at 68.58 147.32 0)
 			(effects
@@ -3578,11 +3578,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "873e010d-04cd-41b7-8909-cef811265167")
+			(uuid "c33b099f-6ba9-466a-acda-087a5f1695ba")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#PWR006")
 					(unit 1)
 				)
@@ -3598,7 +3598,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7b684a04-036d-4ea1-8cc9-ae11710c8f48")
+		(uuid "9da69118-2891-4a42-882d-b56fb90ec8d8")
 	)
 	(label "+5V_LOGIC"
 		(at 81.28 132.08 0)
@@ -3608,7 +3608,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7ccfeb84-4eb1-4eb2-8433-eae5e4dcd791")
+		(uuid "a742c0b5-327e-4002-815d-43e4cb6083bf")
 	)
 	(wire
 		(pts
@@ -3619,13 +3619,13 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9b0218be-bc02-49a3-b069-c3ebb9dfd5bf")
+		(uuid "ec4d8df0-6a52-473c-aa0a-dfb26624b8d0")
 	)
 	(junction
 		(at 53.34 132.08)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "008206fe-9c3f-4782-8a32-7930d26cf96c")
+		(uuid "f47758a5-c290-4995-bd0b-a460bb4a3ea4")
 	)
 	(text "Pololu 5V 3.2A buck: Teensy + Pi"
 		(exclude_from_sim no)
@@ -3636,7 +3636,7 @@
 			)
 			(justify left top)
 		)
-		(uuid "4b7db270-ce92-493e-bbfa-4af50ec767df")
+		(uuid "7f6cf608-7ae2-40b1-a6ef-81990355cde3")
 	)
 	(symbol
 		(lib_id "wallstreet:Buck_5V_Module")
@@ -3646,7 +3646,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "42bd7c25-9172-4c2f-9180-00488df9daa7")
+		(uuid "ecf46382-e18b-4ff0-a8d7-0cb3c9b6af89")
 		(property "Reference" "U4"
 			(at 60.96 154.94 0)
 			(effects
@@ -3684,17 +3684,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "0e14acba-918c-4534-bd12-9d870f693d74")
+			(uuid "a672eca7-96e7-45e2-a796-26ea10a39f7d")
 		)
 		(pin "2"
-			(uuid "922c82ea-f520-4b21-ad2b-8b9a44391175")
+			(uuid "4ef37a8e-91c7-46ef-8a72-2d05a21412b1")
 		)
 		(pin "3"
-			(uuid "5c06727e-55c3-459c-b578-b1f9504970fa")
+			(uuid "2b90564b-608e-4a6b-9fd2-71243bf6447f")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "U4")
 					(unit 1)
 				)
@@ -3710,7 +3710,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d104c31b-a507-42db-9093-e3f5d240ffbf")
+		(uuid "8ea6a3da-544c-419d-b9cc-658253a740d5")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -3720,7 +3720,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3ec43b8c-a2f7-4cba-a8a8-abc21b1dab5c")
+		(uuid "b6300c65-99d4-40a2-9527-1451344d1c3e")
 		(property "Reference" "#PWR007"
 			(at 68.58 175.26 0)
 			(effects
@@ -3757,11 +3757,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "2831f238-05d5-4b75-a6e1-9d23a036e3a6")
+			(uuid "ad8fb281-6546-4d40-9bdf-c5bdf804d762")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#PWR007")
 					(unit 1)
 				)
@@ -3777,7 +3777,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8c09fb5e-7fc6-455a-b835-d7638cfc96e0")
+		(uuid "e867b33d-accd-4d46-836b-b90ac98f7f6c")
 	)
 	(label "+5V_SERVO"
 		(at 81.28 160.02 0)
@@ -3787,7 +3787,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "dd14a182-5d53-43c5-8784-0d3fde24ea61")
+		(uuid "f93cdb09-51db-4c18-ba40-61b1ef646c01")
 	)
 	(wire
 		(pts
@@ -3798,7 +3798,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "437b7751-bfb9-4e85-b473-649d713f3194")
+		(uuid "fe0efd0e-10c8-4b8a-8546-4b264cfb9690")
 	)
 	(text "Pololu 5V 3.2A buck: servos"
 		(exclude_from_sim no)
@@ -3809,7 +3809,7 @@
 			)
 			(justify left top)
 		)
-		(uuid "7d4d9af4-2568-4b61-b8dd-db08bd94d582")
+		(uuid "08bd4385-1696-467c-93fb-d99809a3f8fb")
 	)
 	(symbol
 		(lib_id "wallstreet:Teensy_4.0")
@@ -3819,7 +3819,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a0f3571b-fc79-426c-9037-bc0e81c64e9b")
+		(uuid "f3ec5255-aafb-45a7-af3c-165f4ae3dbef")
 		(property "Reference" "A1"
 			(at 281.94 95.25 0)
 			(effects
@@ -3857,92 +3857,92 @@
 			)
 		)
 		(pin "VIN"
-			(uuid "e3544abb-d57e-4054-af16-2110626b457f")
+			(uuid "33e36330-1e1d-43d0-978a-039139ed17a3")
 		)
 		(pin "3V3"
-			(uuid "35654a83-1594-47fa-94d3-09b3ce3a3a66")
+			(uuid "eea4708b-45be-4e8b-a250-a754c7aefa20")
 		)
 		(pin "0"
-			(uuid "c4226236-eaa6-4a7e-afaa-126554987549")
+			(uuid "7f9bf3f8-d6f3-4282-ad0f-e48d13128d4c")
 		)
 		(pin "1"
-			(uuid "5ffeac5e-66b6-4ac1-a92c-d11514b1164f")
+			(uuid "25bd7eeb-99ee-484e-aa13-6bb87b46c5a2")
 		)
 		(pin "2"
-			(uuid "c6c7e00b-5d64-4f58-a7b9-c3cd1bc0858a")
+			(uuid "6d94e9c6-601a-4696-a4b8-c6786bfdf421")
 		)
 		(pin "3"
-			(uuid "8eafdeb9-d75f-491d-b0c0-1664dd9ce611")
+			(uuid "64d3bc88-610a-4806-a4b7-269c6dfee6f9")
 		)
 		(pin "4"
-			(uuid "3e132ddd-04a3-4c2e-87a2-06286c2b4067")
+			(uuid "dc0cb1e2-c214-4196-af77-5b4a8279749a")
 		)
 		(pin "5"
-			(uuid "ec4ca492-0166-4bc9-89d7-b42d286c540e")
+			(uuid "a386d761-bf6f-4325-95fd-5ff3352885a4")
 		)
 		(pin "6"
-			(uuid "f28eb52c-c354-4321-b613-df5e7937e537")
+			(uuid "6accc931-b9ca-4c67-b9f8-6f55b1657e64")
 		)
 		(pin "7"
-			(uuid "2a74294c-144e-40f2-8e3c-900ec787f140")
+			(uuid "649cb9f2-9514-408b-81e4-d94ec6e5633e")
 		)
 		(pin "8"
-			(uuid "7be82aeb-00d0-4079-b4d5-1210eab3fe18")
+			(uuid "2c7f4756-23e3-4716-ac2c-4e70b1ee9541")
 		)
 		(pin "9"
-			(uuid "9a451d77-3089-47a0-85bc-d2fab0d49d69")
+			(uuid "5df24703-891f-4575-892e-e10d3d8b3daa")
 		)
 		(pin "10"
-			(uuid "21d86352-1cb1-4343-b8eb-cca206ce24f3")
+			(uuid "d642c3d7-a963-447e-b56a-8b80f824954f")
 		)
 		(pin "11"
-			(uuid "5abb326d-2ff3-4485-b12c-aeb392c4d880")
+			(uuid "2a225ca0-f4ca-4f72-9985-29045056f97c")
 		)
 		(pin "12"
-			(uuid "47a0b500-ed6b-4965-98eb-25ebef5638d9")
+			(uuid "29414a24-f30e-4be5-8c15-07355333629a")
 		)
 		(pin "13"
-			(uuid "c41bd26f-3e0e-4afa-8328-7da86faeab28")
+			(uuid "6166ebf1-ca36-4713-8743-f2bd60ea8ecd")
 		)
 		(pin "14"
-			(uuid "226489cb-2286-4c14-b049-0320415182f5")
+			(uuid "7ccb1d57-e8e8-4d67-b712-309fc1073aab")
 		)
 		(pin "15"
-			(uuid "336f7467-f66e-4a1e-83f5-3b5e6cc03c9a")
+			(uuid "b1691a8b-a883-40f9-93a0-745e480a93e5")
 		)
 		(pin "16"
-			(uuid "57468e8c-d149-4b43-9814-b965a8a351b1")
+			(uuid "8b69549a-d750-4e20-b700-7f774215355a")
 		)
 		(pin "17"
-			(uuid "3b733b3a-84b4-4b9a-b176-00edf82fa745")
+			(uuid "3b98ab97-0a9b-40b7-a779-e942bfbe3046")
 		)
 		(pin "18"
-			(uuid "0fc6f3ee-541e-4749-ad27-9d4668cd6d05")
+			(uuid "987a26a1-9ffc-4746-bab0-f4d7cf73fb71")
 		)
 		(pin "19"
-			(uuid "f63f623e-bd97-4c10-893b-d9ee7e08f5fd")
+			(uuid "4b8c88e1-9ab5-439c-bb6a-d01419e370a5")
 		)
 		(pin "20"
-			(uuid "0336fad7-0382-4caf-84c2-8602d3517df0")
+			(uuid "ebc2da05-7466-4048-9e1a-15c712c897d8")
 		)
 		(pin "21"
-			(uuid "9c1eff4e-8116-436a-a2fb-da75d65943f2")
+			(uuid "7c2f1dee-ea3c-42be-812d-9fd83d76a1dc")
 		)
 		(pin "22"
-			(uuid "d2c112e0-9c70-4fdc-b4d1-6faee2b0401d")
+			(uuid "4cc49451-a342-4ed2-bbf6-686a370888e1")
 		)
 		(pin "23"
-			(uuid "36e63c54-14f5-4b58-873b-fc3e112d82a7")
+			(uuid "8999acfc-2ea6-4a23-950b-39b59b49bd16")
 		)
 		(pin "GND1"
-			(uuid "9cf7e6f7-c1c8-4365-94f2-7cb1e214a007")
+			(uuid "24dc1682-6801-46c4-8068-74e97787eb8f")
 		)
 		(pin "GND2"
-			(uuid "e5236ee4-9e25-49c0-8d0b-832973696ff3")
+			(uuid "5468e126-775f-4085-86cd-77e33c4b67c6")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "A1")
 					(unit 1)
 				)
@@ -3958,7 +3958,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "76de3e27-aa53-47bf-a79b-94690bad945c")
+		(uuid "bc832595-76a6-4c2a-837f-0210fa262427")
 	)
 	(label "+5V_LOGIC"
 		(at 276.86 99.06 180)
@@ -3968,7 +3968,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "09182597-69fe-4c55-be92-4882cac03a66")
+		(uuid "922a87a4-e6be-4e42-b21d-7da36b1be70a")
 	)
 	(wire
 		(pts
@@ -3979,7 +3979,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3f12b720-0dbb-491c-abf0-2a934682e10c")
+		(uuid "e4899629-0830-4fe0-9cb5-611bc1bcdd7f")
 	)
 	(label "+3V3"
 		(at 276.86 101.6 180)
@@ -3989,55 +3989,47 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "f766014a-6bbc-49d8-aa85-eeb716b61cae")
+		(uuid "aa4edac2-1573-404d-85e8-ba140a796c2b")
 	)
 	(no_connect
 		(at 279.4 104.14)
-		(uuid "2f6353fb-981d-417e-9cb5-214c41f3a388")
+		(uuid "d305d95f-a993-4334-bd95-67e2d55da9cf")
 	)
 	(no_connect
 		(at 279.4 106.68)
-		(uuid "8a6343d2-31ef-48ad-bfbb-569117e0724f")
-	)
-	(no_connect
-		(at 279.4 124.46)
-		(uuid "4044a438-3676-4d56-930a-5e306168900e")
-	)
-	(no_connect
-		(at 279.4 127)
-		(uuid "0cf2e189-8ba7-412b-8b74-8c794908f26e")
+		(uuid "e7846071-2f8d-422a-b09f-d9be22471d61")
 	)
 	(no_connect
 		(at 279.4 129.54)
-		(uuid "dc6a5919-0252-49ed-8bc4-a2eb6a1e1f94")
+		(uuid "cb84965a-cbab-4fd7-ae46-45e7ef97c44f")
 	)
 	(no_connect
 		(at 279.4 132.08)
-		(uuid "331c90dc-f2d7-41f4-8cf3-8d570f0ab488")
+		(uuid "0ce70921-105b-4ec3-b5cd-57a4efd30bf3")
 	)
 	(no_connect
 		(at 279.4 134.62)
-		(uuid "d1d23939-f7a9-4cbc-bd7e-45cd0d0e1455")
+		(uuid "b326a6ec-a325-49fd-bff5-8c9d3d3a249c")
 	)
 	(no_connect
 		(at 304.8 99.06)
-		(uuid "977f96c9-4ef4-42c1-b609-8031b75691e7")
+		(uuid "99a96fab-83bc-4a48-8b5a-3006fff681d8")
 	)
 	(no_connect
 		(at 304.8 106.68)
-		(uuid "32f05f98-1c3e-4e90-a76d-873403f9babc")
+		(uuid "24212526-bb81-44f0-9d5a-554d48dd84c4")
 	)
 	(no_connect
 		(at 304.8 109.22)
-		(uuid "4904abf6-6e59-44dd-8c9c-55f69cb5a2e5")
+		(uuid "eca98d8e-746f-494a-a29d-2233fcaccc32")
 	)
 	(no_connect
 		(at 304.8 121.92)
-		(uuid "5ab7383b-a468-4f48-b674-ecd0d2135e34")
+		(uuid "e8d3359a-7879-4999-9c42-4d6dd5ced92b")
 	)
 	(no_connect
 		(at 304.8 124.46)
-		(uuid "13a92fe7-252b-40a5-92a4-e8529dde17ec")
+		(uuid "749fd1c6-5791-4201-b90c-08a61db42d5f")
 	)
 	(wire
 		(pts
@@ -4048,7 +4040,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f0e812b5-5550-42a0-9007-12ae9c8b98e8")
+		(uuid "a1b1da4e-a7ff-4017-a492-c7640e7e637d")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -4058,7 +4050,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a7de06aa-4750-4101-a3c2-5e9798082536")
+		(uuid "33e0d457-1cd4-44ef-a466-8d05d75c2ec2")
 		(property "Reference" "#PWR008"
 			(at 289.56 148.59 0)
 			(effects
@@ -4095,11 +4087,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "5f82c7af-5dfc-4fd2-9da2-93bdbba8f4a4")
+			(uuid "16523445-0e94-42b8-9c4f-1020aea65156")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#PWR008")
 					(unit 1)
 				)
@@ -4115,7 +4107,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2772e6c6-ca8b-447d-b198-8c4bc9dde86c")
+		(uuid "96981a7a-c3f8-4b4e-b4d7-8f436f431ca0")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -4125,7 +4117,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f3b99e41-945d-434b-a8d6-8f5b4cdd8e32")
+		(uuid "0c6b5079-8fc3-42c9-8486-dbca4876da8f")
 		(property "Reference" "#PWR009"
 			(at 294.64 148.59 0)
 			(effects
@@ -4162,11 +4154,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "c1ac0739-bdaa-4eb3-8f04-fa1b3e3eb227")
+			(uuid "04a8d5b3-1df0-4651-a6f4-1d2d03a757dd")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#PWR009")
 					(unit 1)
 				)
@@ -4182,7 +4174,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e5103bd0-6d54-47ae-9bf2-34a215d1e3f8")
+		(uuid "72918313-b821-43a9-b297-696955ab807a")
 	)
 	(wire
 		(pts
@@ -4193,7 +4185,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "afe0067d-81dc-4be6-840d-b8cfb9a1c80e")
+		(uuid "ce43dd9b-2187-4b02-a66f-51aa237bd322")
 	)
 	(wire
 		(pts
@@ -4204,7 +4196,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "53551c09-c695-47df-95b8-82f62d51b484")
+		(uuid "7b75aba7-c621-41bd-a9da-a378524f5d93")
 	)
 	(wire
 		(pts
@@ -4215,7 +4207,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "eb8a994b-2c5f-478a-8069-fb7f8b8700ed")
+		(uuid "3ec2df2f-6122-43ef-9649-e98f90bb3f72")
 	)
 	(label "ESC1_SIG"
 		(at 167.64 99.06 90)
@@ -4225,7 +4217,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "4f7fa8fd-7392-409b-b712-2be70c288bb9")
+		(uuid "7f791555-3cdf-47f8-8ffc-d238a49af503")
 	)
 	(label "ESC2_SIG"
 		(at 83.82 99.06 90)
@@ -4235,7 +4227,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "aed088ba-53b2-4054-bb23-d3f23325a313")
+		(uuid "eda82585-4e8f-4945-8ac5-4073225476aa")
 	)
 	(label "BATT_RAW"
 		(at 25.4 63.5 90)
@@ -4245,20 +4237,20 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "96c46729-1248-465c-81cb-c198a1f2c5eb")
+		(uuid "c4d6510e-e895-4b38-b947-c2a074bbc999")
 	)
 	(symbol
 		(lib_id "Motor:Motor_Servo")
-		(at 190.5 137.16 0)
+		(at 190.5 134.62 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "db549a02-6551-4732-bfa9-356c0fe8efb7")
+		(uuid "5ffb0e6e-65a0-4bce-8b99-728c223f0c1b")
 		(property "Reference" "SV1"
-			(at 180.34 132.08 0)
+			(at 180.34 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4266,8 +4258,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "goBILDA 2000-0025-0002"
-			(at 198.12 143.51 0)
+		(property "Value" "Gimbal 1 (goBILDA 25-2)"
+			(at 198.12 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4276,7 +4268,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 190.5 141.986 0)
+			(at 190.5 139.446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4285,7 +4277,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.gobilda.com/2000-series-dual-mode-servo-25-2/"
-			(at 190.5 141.986 0)
+			(at 190.5 139.446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4294,22 +4286,43 @@
 			)
 		)
 		(pin "1"
-			(uuid "03a1311c-5803-4157-8845-70c30bfc3203")
+			(uuid "cb963410-f258-4c4e-98af-d9ae349b9f39")
 		)
 		(pin "2"
-			(uuid "32157eaf-1ab8-4d39-bf49-10939906c13c")
+			(uuid "481b8aab-ac1c-4e7c-a9b0-23215c22427a")
 		)
 		(pin "3"
-			(uuid "ab1030ea-d8fb-432d-b979-9d6c7796efca")
+			(uuid "28175ec5-8ed5-4613-b6e6-a5e7ca6610cd")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "SV1")
 					(unit 1)
 				)
 			)
 		)
+	)
+	(wire
+		(pts
+			(xy 198.12 134.62)
+			(xy 200.66 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2b91208-5e02-497e-88a2-c4b566131bb7")
+	)
+	(label "+5V_SERVO"
+		(at 200.66 134.62 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bd18ca36-5ee7-451c-8a93-e0ff2197ed3c")
 	)
 	(wire
 		(pts
@@ -4320,40 +4333,19 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "15b36469-0867-4f05-aa94-f1fbda8f922f")
-	)
-	(label "+5V_SERVO"
-		(at 200.66 137.16 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d7e5b5da-c4f1-4586-a6d0-80a6c156526e")
-	)
-	(wire
-		(pts
-			(xy 198.12 139.7)
-			(xy 200.66 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e0c0b6ae-e720-472a-b481-da20b25ad14b")
+		(uuid "9725a5de-ebbf-4f81-a96d-939a1b2a3383")
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 200.66 139.7 0)
+		(at 200.66 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "8c82028d-b204-41eb-bf78-6f127f5c5646")
+		(uuid "12243ea9-8f4a-4078-8a73-5fa1500567ea")
 		(property "Reference" "#PWR010"
-			(at 200.66 146.05 0)
+			(at 200.66 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4362,7 +4354,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 200.66 143.51 0)
+			(at 200.66 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4370,7 +4362,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 200.66 139.7 0)
+			(at 200.66 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4379,7 +4371,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 200.66 139.7 0)
+			(at 200.66 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4388,11 +4380,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "bbe71b3c-204d-4c31-bace-49e881e766c8")
+			(uuid "0ac226c6-6465-4278-bb5a-74359b7c0ed4")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#PWR010")
 					(unit 1)
 				)
@@ -4401,25 +4393,25 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 134.62)
-			(xy 231.14 134.62)
+			(xy 198.12 132.08)
+			(xy 231.14 132.08)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2f519af6-9ea9-43ab-ac99-a6f942f88fa5")
+		(uuid "1230f110-f070-4944-9b4e-11ae87981743")
 	)
 	(wire
 		(pts
-			(xy 231.14 134.62)
+			(xy 231.14 132.08)
 			(xy 231.14 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "091af0c9-0188-41db-84af-9843d7a5dfda")
+		(uuid "10866ba3-f492-4716-8467-701c52c823d8")
 	)
 	(wire
 		(pts
@@ -4430,30 +4422,30 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3e41f6f9-7403-49cb-b050-b71e376bfa11")
+		(uuid "b50148fe-3db0-43a8-9198-b5af11dbb3fd")
 	)
 	(label "SERVO1_SIG"
-		(at 215.9 134.62 0)
+		(at 215.9 132.08 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "1b8564a3-f6d0-4795-81e4-16d8d01df07c")
+		(uuid "bab5acfa-5d83-4c99-8326-1690abff4e2f")
 	)
 	(symbol
 		(lib_id "Motor:Motor_Servo")
-		(at 190.5 154.94 0)
+		(at 190.5 149.86 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5b0e7cae-0a82-4bc6-93a7-f95350142e7a")
+		(uuid "4f70e5e3-1784-4859-b2ad-8f66acfba68c")
 		(property "Reference" "SV2"
-			(at 180.34 149.86 0)
+			(at 180.34 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4461,8 +4453,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "goBILDA 2000-0025-0002"
-			(at 198.12 161.29 0)
+		(property "Value" "Gimbal 2 (goBILDA 25-2)"
+			(at 198.12 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4471,7 +4463,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 190.5 159.766 0)
+			(at 190.5 154.686 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4480,7 +4472,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.gobilda.com/2000-series-dual-mode-servo-25-2/"
-			(at 190.5 159.766 0)
+			(at 190.5 154.686 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4489,17 +4481,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "8ae91f8b-af7d-4989-9541-441b9271b199")
+			(uuid "c3cdbfd4-078e-4e9f-a488-777312cf989f")
 		)
 		(pin "2"
-			(uuid "ff7eef5f-afd5-49a0-922d-0f4d1df4d3d5")
+			(uuid "3b77992b-0a79-4748-8407-bb9525b545b8")
 		)
 		(pin "3"
-			(uuid "99cec653-8a88-4ebd-ae36-ea857574d9c1")
+			(uuid "a86a1b19-891b-4ebc-b30f-7cecf266c014")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "SV2")
 					(unit 1)
 				)
@@ -4508,47 +4500,47 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 154.94)
-			(xy 200.66 154.94)
+			(xy 198.12 149.86)
+			(xy 200.66 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b401edb4-e915-43a7-963c-556ad5263607")
+		(uuid "d7f49c5f-206e-435d-bb76-9f8250850cd5")
 	)
 	(label "+5V_SERVO"
-		(at 200.66 154.94 0)
+		(at 200.66 149.86 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "5e8a07f5-4cd1-4cc2-af64-45bc22412e69")
+		(uuid "9ac09c42-17d7-484b-aef6-fde4f13f25e8")
 	)
 	(wire
 		(pts
-			(xy 198.12 157.48)
-			(xy 200.66 157.48)
+			(xy 198.12 152.4)
+			(xy 200.66 152.4)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "47793fa6-706b-47cd-9770-b927e64cae03")
+		(uuid "9a73a5a2-5823-4583-9e21-9e5848437fd0")
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 200.66 157.48 0)
+		(at 200.66 152.4 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "cb2cba10-b993-42f3-b43e-5f040f845c01")
+		(uuid "c5197d48-08ea-4a1d-97b7-7e7bee473b30")
 		(property "Reference" "#PWR011"
-			(at 200.66 163.83 0)
+			(at 200.66 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4557,7 +4549,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 200.66 161.29 0)
+			(at 200.66 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4565,7 +4557,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 200.66 157.48 0)
+			(at 200.66 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4574,7 +4566,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 200.66 157.48 0)
+			(at 200.66 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4583,11 +4575,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "f16b50d1-d29e-4811-b7ac-b1b585771ff1")
+			(uuid "22fc2244-cf3c-40ad-a5d9-9f1ad0bbb2c4")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#PWR011")
 					(unit 1)
 				)
@@ -4596,25 +4588,25 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 152.4)
-			(xy 233.68 152.4)
+			(xy 198.12 147.32)
+			(xy 233.68 147.32)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b05cefae-6eee-4431-9083-31384fa3f11b")
+		(uuid "4bbd2b2b-d779-485f-ac7d-cc8e56fd9bf9")
 	)
 	(wire
 		(pts
-			(xy 233.68 152.4)
+			(xy 233.68 147.32)
 			(xy 233.68 116.84)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bbc00afc-4b4d-4a5c-9f78-0c5ae0f7d5bf")
+		(uuid "69e0b788-e458-4596-9252-c376b86a90a4")
 	)
 	(wire
 		(pts
@@ -4625,30 +4617,30 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c97d580a-a171-40fe-b7c0-be9720a460c6")
+		(uuid "f3a3443d-a9bd-479c-b238-9c990f62b20d")
 	)
 	(label "SERVO2_SIG"
-		(at 215.9 152.4 0)
+		(at 215.9 147.32 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "eb80adbd-3536-4465-a99c-970a0823533a")
+		(uuid "29fc03a4-e2d3-455b-ab79-93ca2e72eb90")
 	)
 	(symbol
 		(lib_id "Motor:Motor_Servo")
-		(at 190.5 172.72 0)
+		(at 190.5 165.1 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp yes)
-		(uuid "3d48de08-a297-4576-b9c0-e5a4d51fdee3")
+		(uuid "9abc4c44-0f09-4b54-8560-201d582b33ba")
 		(property "Reference" "SV3"
-			(at 180.34 167.64 0)
+			(at 180.34 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4657,7 +4649,7 @@
 			)
 		)
 		(property "Value" "2nd axis (later)"
-			(at 198.12 179.07 0)
+			(at 198.12 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4666,7 +4658,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 190.5 177.546 0)
+			(at 190.5 169.926 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4675,7 +4667,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.gobilda.com/2000-series-dual-mode-servo-25-2/"
-			(at 190.5 177.546 0)
+			(at 190.5 169.926 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4684,17 +4676,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "e69d5047-1ec8-4c64-958e-b1ed72b1529c")
+			(uuid "9de51c09-9c80-4d48-8d09-37918af2f529")
 		)
 		(pin "2"
-			(uuid "d8167de0-12b8-4c06-854c-4f2df7025779")
+			(uuid "67a17b52-0560-4d0b-b86e-c041dbb4d3ed")
 		)
 		(pin "3"
-			(uuid "4bb930d8-6b7c-4a8d-9fa4-4c7100719244")
+			(uuid "fbc6a227-5f24-40de-a917-29d25f8b6ccc")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "SV3")
 					(unit 1)
 				)
@@ -4703,47 +4695,47 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 172.72)
-			(xy 200.66 172.72)
+			(xy 198.12 165.1)
+			(xy 200.66 165.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f1b12e79-bd13-44d2-b015-0330e46d52e8")
+		(uuid "9ddb6f4f-d349-4a80-891f-b1c2049bdcd4")
 	)
 	(label "+5V_SERVO"
-		(at 200.66 172.72 0)
+		(at 200.66 165.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "cf16112f-8076-4f71-988b-b45e57216bf2")
+		(uuid "55fff94b-f79f-4fce-8220-258a336e6164")
 	)
 	(wire
 		(pts
-			(xy 198.12 175.26)
-			(xy 200.66 175.26)
+			(xy 198.12 167.64)
+			(xy 200.66 167.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b1aac675-5c37-4fe5-ade9-c8b3aa3ef8a5")
+		(uuid "a73e3a8d-914b-48cc-b885-f4a361b5a8b6")
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 200.66 175.26 0)
+		(at 200.66 167.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "1c3cb9e0-1ae6-4a55-bccb-3a5ecf6f1765")
+		(uuid "44f2ac64-cd1a-43c7-9bf8-34abd33a918d")
 		(property "Reference" "#PWR012"
-			(at 200.66 181.61 0)
+			(at 200.66 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4752,7 +4744,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 200.66 179.07 0)
+			(at 200.66 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4760,7 +4752,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 200.66 175.26 0)
+			(at 200.66 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4769,7 +4761,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 200.66 175.26 0)
+			(at 200.66 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4778,11 +4770,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "b4a6a1d5-b097-40ec-8390-7a59c90ff901")
+			(uuid "32611d1f-5dd4-4ba3-bd77-0bc6e08fffd5")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#PWR012")
 					(unit 1)
 				)
@@ -4791,25 +4783,25 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 170.18)
-			(xy 236.22 170.18)
+			(xy 198.12 162.56)
+			(xy 236.22 162.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4445b4c6-2472-43a8-9444-d122159a1908")
+		(uuid "bbdd9074-b298-4b94-80e6-225bf56a385f")
 	)
 	(wire
 		(pts
-			(xy 236.22 170.18)
+			(xy 236.22 162.56)
 			(xy 236.22 119.38)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9aa799a7-9bd8-4c8b-b8d9-0e4d152ee985")
+		(uuid "9af4bf96-3793-4893-93cf-ad1a5179cc9a")
 	)
 	(wire
 		(pts
@@ -4820,30 +4812,30 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fa58155f-7371-4faf-b5dc-2e6c99028a2f")
+		(uuid "bc0b2320-40a8-4e4f-9784-90f1d597c170")
 	)
 	(label "SERVO3_SIG"
-		(at 215.9 170.18 0)
+		(at 215.9 162.56 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "b27956ee-65ee-46f0-9c26-845263a0924e")
+		(uuid "9916d625-bc99-46f7-9cba-6928941fb998")
 	)
 	(symbol
 		(lib_id "Motor:Motor_Servo")
-		(at 190.5 190.5 0)
+		(at 190.5 180.34 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp yes)
-		(uuid "73ad89db-8549-44bc-9302-a452988e91a7")
+		(uuid "a98540e3-8edc-4ffd-a5c4-0cb2d0ae51ce")
 		(property "Reference" "SV4"
-			(at 180.34 185.42 0)
+			(at 180.34 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4852,7 +4844,7 @@
 			)
 		)
 		(property "Value" "2nd axis (later)"
-			(at 198.12 196.85 0)
+			(at 198.12 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4861,7 +4853,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 190.5 195.326 0)
+			(at 190.5 185.166 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4870,7 +4862,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.gobilda.com/2000-series-dual-mode-servo-25-2/"
-			(at 190.5 195.326 0)
+			(at 190.5 185.166 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4879,17 +4871,17 @@
 			)
 		)
 		(pin "1"
-			(uuid "3de47cb3-3ff5-4de8-bb28-1c8c142881ef")
+			(uuid "16941c3f-e8cc-4d1d-b064-7cd565d4ffad")
 		)
 		(pin "2"
-			(uuid "57ed60cb-62b6-4c1f-8dc7-aa733eaf07f6")
+			(uuid "8db514b6-902b-4767-9ef1-835bec2fcb93")
 		)
 		(pin "3"
-			(uuid "d45a28bd-174c-4d9d-9d41-e86954a732c9")
+			(uuid "fe537ccf-f502-4d4c-ae01-3b281ad549fd")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "SV4")
 					(unit 1)
 				)
@@ -4898,47 +4890,47 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 190.5)
-			(xy 200.66 190.5)
+			(xy 198.12 180.34)
+			(xy 200.66 180.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cb3a578b-06ea-402d-bc2d-9ee8eb849366")
+		(uuid "0411531a-377c-438d-970b-dd9babd0b758")
 	)
 	(label "+5V_SERVO"
-		(at 200.66 190.5 0)
+		(at 200.66 180.34 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "c379b104-4889-4b80-9c8b-e4406bb1eb00")
+		(uuid "2bb4bd64-f2fc-4218-bf19-c5a69d767b93")
 	)
 	(wire
 		(pts
-			(xy 198.12 193.04)
-			(xy 200.66 193.04)
+			(xy 198.12 182.88)
+			(xy 200.66 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "be7bd08a-80d1-400a-bdfc-7a3273c3eb8e")
+		(uuid "9b5f40b0-abcd-4287-95ec-b99ff658a07d")
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 200.66 193.04 0)
+		(at 200.66 182.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3ce26dd4-82bd-4d7a-b45a-b799d1e5c1bc")
+		(uuid "c303b9f3-8f4d-4d3a-88aa-f7d064863fb5")
 		(property "Reference" "#PWR013"
-			(at 200.66 199.39 0)
+			(at 200.66 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4947,7 +4939,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 200.66 196.85 0)
+			(at 200.66 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4955,7 +4947,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 200.66 193.04 0)
+			(at 200.66 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4964,7 +4956,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 200.66 193.04 0)
+			(at 200.66 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4973,11 +4965,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "7f277fe8-171d-44ca-9fa3-f7de01f17e28")
+			(uuid "f479a296-c9f8-4fe3-ab5c-f488a036fda9")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#PWR013")
 					(unit 1)
 				)
@@ -4986,25 +4978,25 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 187.96)
-			(xy 238.76 187.96)
+			(xy 198.12 177.8)
+			(xy 238.76 177.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7f8fe055-aab4-4a12-ade2-7096cf099efa")
+		(uuid "f2d62314-18b8-43e0-867f-0b144eacc846")
 	)
 	(wire
 		(pts
-			(xy 238.76 187.96)
+			(xy 238.76 177.8)
 			(xy 238.76 121.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ddae6b74-cf3d-4eb4-b375-af60bbed8bad")
+		(uuid "63490c89-647d-451b-a1be-3c3de502de4d")
 	)
 	(wire
 		(pts
@@ -5015,17 +5007,418 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "13a26fd3-4eec-47f7-b5e8-3beb5dc9aabd")
+		(uuid "6bbbc388-6988-45cd-bd13-19f03194950f")
 	)
 	(label "SERVO4_SIG"
-		(at 215.9 187.96 0)
+		(at 215.9 177.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "87051eb1-f3ea-4904-bbf5-d2c56073862f")
+		(uuid "0d107b61-78e2-4d96-8dae-2c39d4699973")
+	)
+	(symbol
+		(lib_id "Motor:Motor_Servo")
+		(at 190.5 195.58 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fa76f8f1-5c97-405c-979e-4992e9ca4e13")
+		(property "Reference" "ST1"
+			(at 180.34 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Steer 1, front wheel"
+			(at 198.12 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Footprint" ""
+			(at 190.5 200.406 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.gobilda.com/2000-series-dual-mode-servo-25-2/"
+			(at 190.5 200.406 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "adc8a658-0d9f-46e5-8e22-beb75777eeb2")
+		)
+		(pin "2"
+			(uuid "7b737810-1470-42ef-b48f-9c5e599f0186")
+		)
+		(pin "3"
+			(uuid "831b1be7-c600-4d0d-a5c2-95e24bf22ba3")
+		)
+		(instances
+			(project "car_wiring"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
+					(reference "ST1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 198.12 195.58)
+			(xy 200.66 195.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd11c847-5c61-4697-bf25-afac15791601")
+	)
+	(label "+5V_SERVO"
+		(at 200.66 195.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fa1da642-5d79-4d64-9dd6-0bffc650929c")
+	)
+	(wire
+		(pts
+			(xy 198.12 198.12)
+			(xy 200.66 198.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2989b23c-b89f-4dcf-8c16-9ae2d334da3a")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 200.66 198.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "af57d970-0db0-4361-9dc6-5b0cd958ad6b")
+		(property "Reference" "#PWR014"
+			(at 200.66 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 200.66 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 200.66 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 200.66 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fce6fa46-06ea-411d-a716-e22f328d65d0")
+		)
+		(instances
+			(project "car_wiring"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 198.12 193.04)
+			(xy 241.3 193.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9f60071-f465-4c2a-ac83-adeadadffb25")
+	)
+	(wire
+		(pts
+			(xy 241.3 193.04)
+			(xy 241.3 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8976a8fa-e074-4e12-92b3-a27c856f9532")
+	)
+	(wire
+		(pts
+			(xy 241.3 124.46)
+			(xy 279.4 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "656ce036-a2c7-41e0-bcc2-5bdc3cfd3ea2")
+	)
+	(label "STEER1_SIG"
+		(at 215.9 193.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "13e85e7e-9d96-4a7c-9129-308e33315cdc")
+	)
+	(symbol
+		(lib_id "Motor:Motor_Servo")
+		(at 190.5 210.82 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "303290f6-f54b-4f02-b43b-b4145aea2447")
+		(property "Reference" "ST2"
+			(at 180.34 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Steer 2, front wheel"
+			(at 198.12 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Footprint" ""
+			(at 190.5 215.646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.gobilda.com/2000-series-dual-mode-servo-25-2/"
+			(at 190.5 215.646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1a549b83-8b00-40ca-8407-a6ab6a31ec6b")
+		)
+		(pin "2"
+			(uuid "f80848fb-acc5-4083-a9ba-1c12b69f7bc2")
+		)
+		(pin "3"
+			(uuid "a2844718-abc5-4246-ab83-9c2e3d39131f")
+		)
+		(instances
+			(project "car_wiring"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
+					(reference "ST2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 198.12 210.82)
+			(xy 200.66 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a32e7bb0-c982-4994-9ebf-b9e01251a028")
+	)
+	(label "+5V_SERVO"
+		(at 200.66 210.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e2231fff-f19a-4453-a56c-372557a885d6")
+	)
+	(wire
+		(pts
+			(xy 198.12 213.36)
+			(xy 200.66 213.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c09d02a9-da73-48ca-986d-2b4213a0ab1c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 200.66 213.36 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8084c4c9-a691-4a15-a08e-69d75ad638c9")
+		(property "Reference" "#PWR015"
+			(at 200.66 219.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 200.66 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 200.66 213.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 200.66 213.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9ce98297-0a55-482b-9c93-3107df04b40d")
+		)
+		(instances
+			(project "car_wiring"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
+					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 198.12 208.28)
+			(xy 243.84 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "967e7164-29fb-4e16-9665-2620041b6870")
+	)
+	(wire
+		(pts
+			(xy 243.84 208.28)
+			(xy 243.84 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f876f3d-6848-4b21-ad10-8dd6746b1f9b")
+	)
+	(wire
+		(pts
+			(xy 243.84 127)
+			(xy 279.4 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91b07f46-6b49-483c-a448-24152203966c")
+	)
+	(label "STEER2_SIG"
+		(at 215.9 208.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "067fe379-a0f1-4dfd-9bda-1cc7d10a47c0")
+	)
+	(text "Steering: one angle for both wheels. ST2 is a mirror image,\nso the firmware flips it (STEER_DIR). 0 deg = straight."
+		(exclude_from_sim no)
+		(at 152.4 226.06 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "c77adfa2-a080-41ea-bb6b-bf37a3f205f7")
 	)
 	(symbol
 		(lib_id "wallstreet:Pi_Zero_2W")
@@ -5035,7 +5428,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "76cb9957-d410-4601-9619-db8aaf7a2e2a")
+		(uuid "5954b1d6-9b17-4e5e-86b0-e44d95f84c3a")
 		(property "Reference" "A2"
 			(at 365.76 58.42 0)
 			(effects
@@ -5073,23 +5466,23 @@
 			)
 		)
 		(pin "2"
-			(uuid "3b945f85-878f-408e-970a-1287b24a6b99")
+			(uuid "025d19fb-ab8b-4b2b-8f1b-2e85b5575ebb")
 		)
 		(pin "4"
-			(uuid "f3633d09-d61d-4905-9528-d73aebc74a53")
+			(uuid "2b0f43e6-dea0-4ff0-b721-6b1715707eb4")
 		)
 		(pin "10"
-			(uuid "7c962217-94a1-4bed-935a-54420d61ca67")
+			(uuid "49097fdb-0c56-4f09-9034-1b6e8c683943")
 		)
 		(pin "8"
-			(uuid "9fac72fc-5c7d-400f-aad6-9430f52af4cc")
+			(uuid "1b388582-5ad2-48c5-8009-567ac8b7c7f4")
 		)
 		(pin "6"
-			(uuid "06b0f480-8dd1-4864-b50e-39ef76fbc29e")
+			(uuid "77c00cee-f1db-4823-af96-66f3d2aa4a70")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "A2")
 					(unit 1)
 				)
@@ -5105,7 +5498,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ff20027f-0444-4e3a-9a56-317a2281892f")
+		(uuid "6d4d799a-8a78-493e-b573-22eb593a7b98")
 	)
 	(label "+5V_LOGIC"
 		(at 360.68 62.23 180)
@@ -5115,11 +5508,11 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "efd62df1-1122-4a6e-9a45-f027fb9be3e9")
+		(uuid "41dd1663-c783-4c44-9b11-ec2fd5689c1b")
 	)
 	(no_connect
 		(at 363.22 64.77)
-		(uuid "65418ea3-c1c3-4094-8b71-6b8630ed38e3")
+		(uuid "f10abcc9-9e7b-4055-947b-6269e4a24f9a")
 	)
 	(wire
 		(pts
@@ -5130,7 +5523,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9f7dab6f-ceab-4bfa-ba27-03c2c7f22bf1")
+		(uuid "cad36531-c75a-4940-8b65-022eb354de6d")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -5140,8 +5533,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "32cbabe9-9a93-4667-8397-586ff64362c5")
-		(property "Reference" "#PWR014"
+		(uuid "8794e8f7-fc2d-4fe0-b370-f08576b18d04")
+		(property "Reference" "#PWR016"
 			(at 381 83.82 0)
 			(effects
 				(font
@@ -5177,12 +5570,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "4304ccd8-85a3-40e8-914e-440897d53760")
+			(uuid "7009184c-276c-484f-a226-094178fdbf16")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
-					(reference "#PWR014")
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -5197,7 +5590,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6e912468-fb64-4648-a96f-4de8a9cc86fe")
+		(uuid "8ee1099a-d764-4d2a-a99c-9dca2f6e340d")
 	)
 	(wire
 		(pts
@@ -5208,7 +5601,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f9829445-b183-4f61-b843-16d113a74471")
+		(uuid "9bd4e112-3e88-42ed-ba1c-a8cb93d23588")
 	)
 	(wire
 		(pts
@@ -5219,7 +5612,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0c0c6927-14a5-4949-a34f-37e9ca4e2ca5")
+		(uuid "c723e44d-5849-4b32-8b6c-04f702957091")
 	)
 	(wire
 		(pts
@@ -5230,7 +5623,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ce43837b-ff9b-4c3a-929e-a9585fe0bfac")
+		(uuid "c6266d1e-861c-4757-90c0-d4ce8bfd99de")
 	)
 	(wire
 		(pts
@@ -5241,7 +5634,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "08759541-68f7-4e08-a5f5-9b931526f29f")
+		(uuid "d23c653f-1ed3-479c-81c5-8a65d5b7b610")
 	)
 	(wire
 		(pts
@@ -5252,7 +5645,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d89149bd-929e-4559-9a0f-3a0e1d6a85c1")
+		(uuid "eaca15c3-e741-4008-91d4-cc85af433bd8")
 	)
 	(label "UART_TX3"
 		(at 307.34 101.6 0)
@@ -5262,7 +5655,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "9208d256-04d6-4600-bcca-79e21d85fc17")
+		(uuid "ad103da7-0341-4b30-a3f3-3ab3ef8e10be")
 	)
 	(label "UART_RX3"
 		(at 307.34 104.14 0)
@@ -5272,7 +5665,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "29fad75a-e742-413e-8448-0345b9e4b647")
+		(uuid "d91d7241-1575-4dbe-a3e9-132e4a7e2c12")
 	)
 	(label "I2C_SDA"
 		(at 307.34 111.76 0)
@@ -5282,7 +5675,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7159f710-911d-47f1-b484-6246d4373c5a")
+		(uuid "0e742034-eb3c-4aac-8831-aa2b31bd692e")
 	)
 	(label "I2C_SCL"
 		(at 307.34 114.3 0)
@@ -5292,7 +5685,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "77f7171f-3091-41dd-80c4-c3e007dc1363")
+		(uuid "55c4187b-1d7d-477a-8821-696a80f0cd14")
 	)
 	(label "IR1_XSHUT"
 		(at 307.34 116.84 0)
@@ -5302,7 +5695,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "64c1487a-70f6-48a7-b51b-f85648436e1c")
+		(uuid "f0889b05-d20e-48df-a009-07f491aa7767")
 	)
 	(label "IR2_XSHUT"
 		(at 307.34 119.38 0)
@@ -5312,7 +5705,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ded00f5b-ac9c-4f9a-b307-c982041c2296")
+		(uuid "343296c0-2722-4f44-97dc-3134dae1e443")
 	)
 	(symbol
 		(lib_id "wallstreet:ICM45686_Module")
@@ -5322,7 +5715,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "869e39a6-dfcf-4f14-a110-de8865b2c937")
+		(uuid "89789cc5-12b5-4a6e-af80-b1cf25db327b")
 		(property "Reference" "IMU1"
 			(at 373.38 86.36 0)
 			(effects
@@ -5360,32 +5753,32 @@
 			)
 		)
 		(pin "1"
-			(uuid "1a5570bc-5876-48d5-8da8-ff6130c6b126")
+			(uuid "95a3114c-fe12-457f-ad2b-e7fdfdc7b75d")
 		)
 		(pin "3"
-			(uuid "1dee99f5-17bf-41a1-b21f-4b5dd1d9c057")
+			(uuid "68fdbc04-d151-40a1-8eac-f0ba73ace95e")
 		)
 		(pin "4"
-			(uuid "f8f0a76f-d3f1-46e7-8fb2-06d24dbc78ae")
+			(uuid "bf977b31-5d6a-496e-8869-e3cc029a5053")
 		)
 		(pin "5"
-			(uuid "6b277ec0-877a-4b3c-ba57-4ccfb28bf3ef")
+			(uuid "f7759143-7903-4d7a-9c89-97421d869615")
 		)
 		(pin "7"
-			(uuid "9f07d265-7dce-40c1-bbeb-5a28ebb3e35c")
+			(uuid "08a1dbdd-cb48-4305-a07c-0a59266cf528")
 		)
 		(pin "8"
-			(uuid "37a6000a-4a02-4e82-83f3-22c2455a2982")
+			(uuid "873d5747-c71c-40ca-937a-fbee6f05cc3c")
 		)
 		(pin "6"
-			(uuid "a290b52c-8260-4dd8-8b00-b339714a6648")
+			(uuid "b1bc6f72-a3fa-4ed1-a57c-833b03c66924")
 		)
 		(pin "2"
-			(uuid "3d79ad3a-6d74-429c-bd0c-feb1885b2f64")
+			(uuid "f0462d6e-d7ff-405a-945b-8f5f28941ee1")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "IMU1")
 					(unit 1)
 				)
@@ -5401,7 +5794,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "559c1240-a080-4182-a013-da6d05ff1fa2")
+		(uuid "a21d3487-f76b-4d54-bee9-be3ea0d60e91")
 	)
 	(label "+3V3"
 		(at 368.3 90.17 180)
@@ -5411,7 +5804,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "0e578fb2-2c3c-4508-9f20-5024f7653b06")
+		(uuid "cfff65d7-38e1-487c-bc39-bcf4543dc81a")
 	)
 	(wire
 		(pts
@@ -5422,7 +5815,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fc3f1b16-242a-4af1-ab0c-964f5ba18e20")
+		(uuid "0f3dcc56-0f50-4704-92f1-751900f50771")
 	)
 	(label "+3V3"
 		(at 368.3 97.79 180)
@@ -5432,15 +5825,15 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "2583d055-76dd-4561-aaef-27d199e69d12")
+		(uuid "fe686545-2a31-403f-8f75-59317ea2f55f")
 	)
 	(no_connect
 		(at 370.84 100.33)
-		(uuid "1a6604a4-42b4-49c7-bc7e-13d3806d82ca")
+		(uuid "237ef968-b412-4d84-ba54-24360a9b414c")
 	)
 	(no_connect
 		(at 370.84 102.87)
-		(uuid "f4ca64be-b873-4076-b79d-1bd323594162")
+		(uuid "be871256-5a71-4a19-9d18-4ea7e9c2a52e")
 	)
 	(wire
 		(pts
@@ -5451,7 +5844,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8e30780a-961c-4ebc-aee3-d1946493ff6a")
+		(uuid "422b119a-bcfc-40a9-9834-1f6a76ff3fd7")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -5461,8 +5854,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "bf58e990-d51a-439d-b818-8705103069f9")
-		(property "Reference" "#PWR015"
+		(uuid "dad36e17-e707-427d-a669-8cf49fb67693")
+		(property "Reference" "#PWR017"
 			(at 368.3 114.3 0)
 			(effects
 				(font
@@ -5498,12 +5891,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "93de51ec-9cf7-4f9d-bea0-875025251b28")
+			(uuid "797596b2-c2f5-4b55-84e4-3ebee9359479")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
-					(reference "#PWR015")
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -5518,7 +5911,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1b969672-3e91-4a25-9a4b-d9ca478d67a6")
+		(uuid "4c103157-2223-4d2d-a515-437f4ecb49e6")
 	)
 	(wire
 		(pts
@@ -5529,13 +5922,13 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f2d81778-558f-43f8-8921-c5bb0b7ffa8b")
+		(uuid "eb9c2126-a2fb-40df-95f7-63b3d3f74759")
 	)
 	(junction
 		(at 368.3 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "daaf7139-7126-47bb-8a9a-e25ca9fa19b2")
+		(uuid "73bd0c68-e27c-4c0e-94f8-954315a7bb3d")
 	)
 	(symbol
 		(lib_id "wallstreet:VL53L1X")
@@ -5545,7 +5938,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "959b44cc-6527-4f62-a5ad-a12cfac95ecc")
+		(uuid "bac471d8-53f6-426a-a844-db678234ee06")
 		(property "Reference" "IR1"
 			(at 373.38 124.46 0)
 			(effects
@@ -5583,26 +5976,26 @@
 			)
 		)
 		(pin "1"
-			(uuid "2f4a71ad-6e43-4dc6-bee8-b48e162f600f")
+			(uuid "01739746-60a4-4a6e-8058-cb9a9259ea62")
 		)
 		(pin "3"
-			(uuid "1b459b84-cf1d-4abd-a813-5f9901f91d64")
+			(uuid "dc5bde78-3199-4744-9ce2-4484bf20176f")
 		)
 		(pin "4"
-			(uuid "f1b88b1c-ed88-4f1c-b45e-7d7b94fcd9d4")
+			(uuid "3399041d-d6d2-40f8-9c89-60c82e05cee5")
 		)
 		(pin "5"
-			(uuid "5a8f5b0f-7cae-45b6-9e23-beeae60adacb")
+			(uuid "6b8cf851-3db3-41a7-90d7-390305c2cc7e")
 		)
 		(pin "6"
-			(uuid "ecb89876-32f2-46c7-af2a-b5128f91bf6f")
+			(uuid "28d77587-1510-4210-8e18-b4d491ea7be7")
 		)
 		(pin "2"
-			(uuid "62681716-3817-4669-b015-3e588476c89d")
+			(uuid "9a5903cb-efc1-4d82-a2d1-d49921e83b7e")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "IR1")
 					(unit 1)
 				)
@@ -5618,7 +6011,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c8c71810-9d0f-4058-9d39-b6c654750faa")
+		(uuid "82ba229d-82d4-4779-b5f8-1dda10c28c14")
 	)
 	(label "+3V3"
 		(at 368.3 128.27 180)
@@ -5628,11 +6021,11 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "72cc17d0-3bfb-4486-8b02-26bf24e49539")
+		(uuid "c6354acd-6f72-46ce-b791-ea2a4ef9266f")
 	)
 	(no_connect
 		(at 370.84 138.43)
-		(uuid "fcfd5ab4-5b6f-486f-807e-7e4e1365865b")
+		(uuid "649d885a-8548-4c6b-b9fb-f8550596fcb7")
 	)
 	(wire
 		(pts
@@ -5643,7 +6036,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3180ca54-8a09-411a-92b3-fdc1b29d40f8")
+		(uuid "b08b162b-84f6-4f0c-9fae-cd090bd8be44")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -5653,8 +6046,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7ac62793-bcf7-4b15-ac52-a0e445b8d479")
-		(property "Reference" "#PWR016"
+		(uuid "afc942c4-9769-4b70-a503-18567df0f674")
+		(property "Reference" "#PWR018"
 			(at 368.3 147.32 0)
 			(effects
 				(font
@@ -5690,12 +6083,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "c2d96518-1ffa-4404-b743-36f260a15a73")
+			(uuid "b4ded866-7bc6-44f8-8a9a-5e45fd434a5c")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
-					(reference "#PWR016")
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -5709,7 +6102,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "42866fed-8668-4380-8cdb-7e81df701ac9")
+		(uuid "744b75f5-8cb0-4427-bbea-ec1679b830d9")
 		(property "Reference" "IR2"
 			(at 373.38 157.48 0)
 			(effects
@@ -5747,26 +6140,26 @@
 			)
 		)
 		(pin "1"
-			(uuid "c79e8668-6a24-4541-8457-956fee1ad38a")
+			(uuid "f840929f-0238-417c-a142-eace4f4b3efa")
 		)
 		(pin "3"
-			(uuid "3117930e-adff-4ec8-b43c-9fb5db135203")
+			(uuid "aa5d53a6-53b3-46ba-b051-474a1bfb4e7b")
 		)
 		(pin "4"
-			(uuid "6ef56f67-5d5e-4b56-8ecf-100114ef1840")
+			(uuid "59efe8e6-69a5-4780-b793-1bd255f892f8")
 		)
 		(pin "5"
-			(uuid "4151d20b-d028-4ef5-850e-1a9096a44cb6")
+			(uuid "b26043db-056c-4cb9-b9d6-2b4eaad01042")
 		)
 		(pin "6"
-			(uuid "cb8ec10d-2e2c-4bcb-b106-c573c30f59b9")
+			(uuid "5a7c2065-eb05-4f3a-95e1-1cf100d916b6")
 		)
 		(pin "2"
-			(uuid "600fb34b-69d6-4c31-b8f5-a45348453603")
+			(uuid "a1c94136-6d24-4178-b7b2-eb27af31c21f")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "IR2")
 					(unit 1)
 				)
@@ -5782,7 +6175,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "bbdb8cd3-2b30-491b-a249-6fdfbc1a48b1")
+		(uuid "458a2435-39c3-4b72-b2c0-18b882af3dc6")
 	)
 	(label "+3V3"
 		(at 368.3 161.29 180)
@@ -5792,11 +6185,11 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "3d34e3e3-5e91-4ac6-8f4a-851df55ce14b")
+		(uuid "75613b20-d4c8-432e-afc5-2ff803254889")
 	)
 	(no_connect
 		(at 370.84 171.45)
-		(uuid "8b41f7e0-0dba-41d1-a0df-927247d989aa")
+		(uuid "fd4c1dbd-e40d-4256-b5e6-756c55a6b3ad")
 	)
 	(wire
 		(pts
@@ -5807,7 +6200,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "50ea9f29-67e6-48a5-844f-5095ba540971")
+		(uuid "f462a9a5-d24d-4ad0-ad8c-75ddd5612128")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -5817,8 +6210,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "74bd785c-5199-4762-a3ea-07e162217cd8")
-		(property "Reference" "#PWR017"
+		(uuid "76cffc57-3c88-4815-b6c2-432f55a94013")
+		(property "Reference" "#PWR019"
 			(at 368.3 180.34 0)
 			(effects
 				(font
@@ -5854,12 +6247,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "a15746b1-9405-4caf-92f8-bd8b7feac95b")
+			(uuid "2dd86a00-d463-435b-9387-28a7ee4490f0")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
-					(reference "#PWR017")
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -5874,7 +6267,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e2fdda8e-325b-4b75-8751-1a1e15a9dcab")
+		(uuid "1589e1dc-1e9e-4f2a-a838-d336dba3ca90")
 	)
 	(wire
 		(pts
@@ -5885,7 +6278,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8e87955c-f060-4c07-a901-aa848826c55a")
+		(uuid "02a2d7f7-355d-46ad-bc75-fa0f4f048db0")
 	)
 	(wire
 		(pts
@@ -5896,7 +6289,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ac8b7963-c1e1-461e-8fe9-a9876e9b1079")
+		(uuid "e53a7200-b849-41d6-abcd-60a704b9465d")
 	)
 	(wire
 		(pts
@@ -5907,13 +6300,13 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c99c6f47-bbf6-4785-85d0-e8715dc58cf7")
+		(uuid "ebf47123-6548-40d0-a6e8-d78076be2add")
 	)
 	(junction
 		(at 345.44 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a39e1b45-615c-4e8b-bf6a-302f7f8212db")
+		(uuid "131e81b7-4e4e-4439-871b-8c318c71848e")
 	)
 	(wire
 		(pts
@@ -5924,7 +6317,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4d73d377-bb94-4e42-bef3-eff944f082d7")
+		(uuid "c8b2c2d1-d463-4970-ba25-370414456317")
 	)
 	(wire
 		(pts
@@ -5935,13 +6328,13 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "067aa27e-7152-4694-88f1-8f98fa8d2a94")
+		(uuid "fb917b28-6b93-44fc-80e5-3f49a70d7d34")
 	)
 	(junction
 		(at 345.44 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "fe3fd360-384d-4441-a315-0acfac2ffa83")
+		(uuid "9db33eaf-2806-42cd-a17a-96e50a409621")
 	)
 	(wire
 		(pts
@@ -5952,7 +6345,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f51e07f6-2350-4f6b-a9ac-d8cc63c86feb")
+		(uuid "c892c0ab-3bf6-4b08-b409-c9605f1f3e04")
 	)
 	(wire
 		(pts
@@ -5963,7 +6356,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8575c0d6-4a3d-4f97-880a-ca177795e744")
+		(uuid "09db8137-8946-4966-b427-697056ac0052")
 	)
 	(wire
 		(pts
@@ -5974,7 +6367,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9bad8cea-dfc5-4520-a51a-ccd5464073df")
+		(uuid "8e397bb7-52f6-4415-b77a-433a29920e8c")
 	)
 	(wire
 		(pts
@@ -5985,7 +6378,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f365bcdf-6b7f-4c55-9dd9-31140ec2d7bf")
+		(uuid "6995a09c-264e-416e-b218-749662f1177a")
 	)
 	(wire
 		(pts
@@ -5996,13 +6389,13 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ca892c54-020c-4dfe-9b78-9f8f8b2240bc")
+		(uuid "55d112fb-a6f0-4b89-930a-2f1bd091e57f")
 	)
 	(junction
 		(at 350.52 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f0547c84-96f8-433f-8d33-432b5701392b")
+		(uuid "032be509-4a0f-4f9a-b6d6-6cdc32a45af8")
 	)
 	(wire
 		(pts
@@ -6013,7 +6406,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f50e4354-b3ec-4816-a4f4-79bc24522612")
+		(uuid "7e540c8e-6bd9-4bc8-b65b-6749145235d2")
 	)
 	(wire
 		(pts
@@ -6024,13 +6417,13 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "54b32bbc-864e-4d3a-97a1-43f5193b26d5")
+		(uuid "d8161064-fb60-4a89-b165-819718cc3915")
 	)
 	(junction
 		(at 350.52 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "29b68ed3-3846-4b2d-90b2-0ec49a3c86b8")
+		(uuid "ba1b906c-4b32-4ee2-b160-d5c67acb3afa")
 	)
 	(wire
 		(pts
@@ -6041,7 +6434,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b915c8e5-7421-4aac-b512-a7d0f2872049")
+		(uuid "6b79c12e-1391-43ab-8714-af27a243c860")
 	)
 	(wire
 		(pts
@@ -6052,7 +6445,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a4a8fdf2-4f75-44a4-92a2-b792bf00188d")
+		(uuid "52c7314d-702f-42ad-8d38-999a33fe7a4c")
 	)
 	(wire
 		(pts
@@ -6063,7 +6456,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d9091655-797b-458f-a10a-25064d2db249")
+		(uuid "2dc3dc19-a269-4820-82f8-494142780d17")
 	)
 	(wire
 		(pts
@@ -6074,7 +6467,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "52991284-4d0c-4086-a679-b22cdbfb46b5")
+		(uuid "86c765a6-6bed-43dd-a250-369770c02dd4")
 	)
 	(wire
 		(pts
@@ -6085,7 +6478,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "645e1d69-3a8a-45a0-b4ac-f7029edf98b0")
+		(uuid "d28d4972-f7b1-4a6f-9125-cc5c66aa52c5")
 	)
 	(wire
 		(pts
@@ -6096,7 +6489,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a42629f3-df57-42e9-9c3b-6042392881bd")
+		(uuid "59fde715-a86e-4806-9281-1487098da296")
 	)
 	(wire
 		(pts
@@ -6107,7 +6500,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7f0526da-e2c9-4e35-9b24-bb76ce5c3bb2")
+		(uuid "61acdb83-8dba-4978-923c-4684065a12c0")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -6117,8 +6510,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "99208cd9-4587-4a37-a8b2-7478608c495b")
-		(property "Reference" "#PWR018"
+		(uuid "93494044-7adc-45af-a695-6b4e6a946c55")
+		(property "Reference" "#PWR020"
 			(at 25.4 201.93 0)
 			(effects
 				(font
@@ -6154,12 +6547,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "bf94b6c5-093f-4b7e-a1e8-a08a2a41b349")
+			(uuid "0e33ea41-3197-4c9a-8796-78df446543af")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
-					(reference "#PWR018")
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -6173,8 +6566,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "704cb445-6f30-4cf3-a8c7-fcd7423f2461")
-		(property "Reference" "#FLG018"
+		(uuid "e6da579d-b46c-4ce6-94af-0d721a239130")
+		(property "Reference" "#FLG020"
 			(at 25.4 201.93 0)
 			(effects
 				(font
@@ -6210,12 +6603,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "714a901e-af08-416b-9cf9-d3819e4e96cf")
+			(uuid "5c7c9fb4-d98e-4f9a-bac8-fe4e057ee90a")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
-					(reference "#FLG018")
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
+					(reference "#FLG020")
 					(unit 1)
 				)
 			)
@@ -6229,7 +6622,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f90b6379-c9ad-4e87-8149-da1f0e4a25e7")
+		(uuid "36252a6a-ca6f-4bc2-b132-cb1699754c11")
 		(property "Reference" "#FLG_VBAT"
 			(at 40.64 201.93 0)
 			(effects
@@ -6266,11 +6659,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "0ec6d05e-92c6-4b67-8fb0-af46c6a133d3")
+			(uuid "9b88050b-d118-4707-8ad8-6e7dfcc224aa")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#FLG_VBAT")
 					(unit 1)
 				)
@@ -6286,7 +6679,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "90dc14c7-66c7-4166-9a0f-ab2038a67d9c")
+		(uuid "ec9024fd-5c5b-4e0d-af29-1c1496e736c4")
 	)
 	(label "VBAT"
 		(at 40.64 198.12 270)
@@ -6296,7 +6689,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "624a120a-e203-4c3a-98a8-10a8fa98165f")
+		(uuid "fac601df-49fb-4a0f-851a-ec6769a2fd28")
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
@@ -6306,7 +6699,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e0f43c81-63ce-4a17-a5b7-17e8cdffdb7e")
+		(uuid "db6aa923-093e-40c6-a397-a49bc917ea15")
 		(property "Reference" "#FLG_5V_LOGIC"
 			(at 55.88 201.93 0)
 			(effects
@@ -6343,11 +6736,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "6443e999-0567-4f85-9692-54f85da9f4a3")
+			(uuid "5731b7fe-dee2-4b1a-bfe2-f2a18224a378")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#FLG_5V_LOGIC")
 					(unit 1)
 				)
@@ -6363,7 +6756,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3a0f4a9d-7688-4c8f-b7b2-78e612f14c22")
+		(uuid "679a71e1-dac8-44b5-a1f0-5387d69e6b22")
 	)
 	(label "+5V_LOGIC"
 		(at 55.88 198.12 270)
@@ -6373,7 +6766,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "497ec678-be46-4b1b-afc6-8e847abe6de9")
+		(uuid "806c6d79-494b-40a3-b4dd-3d5fdfab278b")
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
@@ -6383,7 +6776,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fada96ee-00a0-4ac3-9fcc-1c6ff8b07afb")
+		(uuid "489c66f3-fd33-4f61-875b-9b4505c6fb14")
 		(property "Reference" "#FLG_5V_SERVO"
 			(at 71.12 201.93 0)
 			(effects
@@ -6420,11 +6813,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "db234cea-e724-4559-a9a5-38632166c66b")
+			(uuid "3692b926-8f80-4da1-8bca-7a1c7b05317d")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#FLG_5V_SERVO")
 					(unit 1)
 				)
@@ -6440,7 +6833,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7f6a79ab-46aa-49bd-9817-b81dbd4fa653")
+		(uuid "fe334424-6061-4cab-aa95-f03a610ca89f")
 	)
 	(label "+5V_SERVO"
 		(at 71.12 198.12 270)
@@ -6450,7 +6843,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "4a2c6369-0e46-492e-ae96-10ac3bd84f92")
+		(uuid "052ff8ca-32c6-485e-8e1d-7ee4c3ae1e02")
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
@@ -6460,7 +6853,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "9e9e89df-f329-4f80-9ac3-fae6ed82c82f")
+		(uuid "fe76ea54-be54-49bb-bcf8-a08a07f87bc0")
 		(property "Reference" "#FLG_3V3"
 			(at 86.36 201.93 0)
 			(effects
@@ -6497,11 +6890,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "0c0a927b-5d1d-42cb-8b63-ee77a7d6187d")
+			(uuid "5625212c-9f6f-46d4-a605-c6452c1a8ee1")
 		)
 		(instances
 			(project "car_wiring"
-				(path "/3793e757-7e8b-4cc1-8fbf-c7f705cb86e5"
+				(path "/738b1610-adf9-4978-a457-9b4cf5cbf3b2"
 					(reference "#FLG_3V3")
 					(unit 1)
 				)
@@ -6517,7 +6910,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "748dc5ce-9d3e-4f10-8d81-2e9dd8d5e732")
+		(uuid "275d19f2-6bcf-4562-95b4-0cb730344483")
 	)
 	(label "+3V3"
 		(at 86.36 198.12 270)
@@ -6527,7 +6920,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "3030c0b4-d65d-46a1-a248-9544c9767f0e")
+		(uuid "e8354d63-09d0-41af-a549-3a456df2bed1")
 	)
 	(text "Laptop runs rig_control.py and connects to the Pi over Wi-Fi.\nPi talks to the Teensy over UART (Serial3, 3.3 V both sides)."
 		(exclude_from_sim no)
@@ -6538,7 +6931,7 @@
 			)
 			(justify left top)
 		)
-		(uuid "46bdddd9-db57-4e42-b826-298504217876")
+		(uuid "ba677bfb-e00d-4c93-be56-97d32860b727")
 	)
 	(text "ICM-45686: pin names vary by module, check the silkscreen.\nCS high = I2C mode. SDO low = address 0x68."
 		(exclude_from_sim no)
@@ -6549,7 +6942,7 @@
 			)
 			(justify left top)
 		)
-		(uuid "718a2e56-a8ab-4002-b609-6404a530ef03")
+		(uuid "9b7063aa-710b-48b0-90f5-a249246242c1")
 	)
 	(text "IR1, IR2 share I2C. Teensy holds one in reset\n(XSHUT low) at startup to give each its own address."
 		(exclude_from_sim no)
@@ -6560,18 +6953,18 @@
 			)
 			(justify left top)
 		)
-		(uuid "8aec6376-8648-473e-9d86-a22663e005eb")
+		(uuid "c26f867b-24cd-4591-9e16-0d091bd8b1df")
 	)
 	(text "SV3, SV4: 2nd-axis servos, added later (DNP)."
 		(exclude_from_sim no)
-		(at 160.02 213.36 0)
+		(at 152.4 233.68 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 1 1)
 			)
 			(justify left top)
 		)
-		(uuid "f0d4384e-ca41-4d4d-a311-c467e0c45ffe")
+		(uuid "6140813c-b609-411a-8865-5d294daad0b5")
 	)
 	(text "NOTES"
 		(exclude_from_sim no)
@@ -6583,9 +6976,9 @@
 			)
 			(justify left top)
 		)
-		(uuid "10cbbe1a-f61b-4ca2-af02-cfcda6db26ea")
+		(uuid "44b71f89-ee14-42b7-bd89-b492c7ffc09d")
 	)
-	(text "1. Kill switch S1 must be DC rated for 48 V (pack is 25.2 V full) and 30 A or more.\n2. U3 and U4 are Pololu D36V28F5 modules (regulator, inductor and capacitors are on the board).\n3. Servos get their own regulator (U4) so servo current can't reset the Pi or Teensy.\n4. Teensy 4.0 pins are 3.3 V only. Never connect a 5 V signal to a Teensy pin.\n5. IMU and IR sensors run from the Teensy 3.3V pin, so I2C stays at 3.3 V.\n6. If the Teensy USB is plugged in while VIN is powered, cut the VIN-VUSB pad.\n7. ESC red BEC wires (BEC_5V) stay unconnected and taped off.\n8. All grounds are common (every GND symbol is the same net).\n9. Optional: 60 A fuse in the + wire right after the battery."
+	(text "1. Kill switch S1 must be DC rated for 48 V (pack is 25.2 V full) and 30 A or more.\n2. U3 and U4 are Pololu D36V28F5 modules (regulator, inductor and capacitors are on the board).\n3. Servos (gimbals + steering) get their own regulator (U4) so they can't reset the Pi or Teensy.\n   4 servos share U4 (3.2 A). If they twitch under load, give steering its own regulator.\n4. Teensy 4.0 pins are 3.3 V only. Never connect a 5 V signal to a Teensy pin.\n5. IMU and IR sensors run from the Teensy 3.3V pin, so I2C stays at 3.3 V.\n6. If the Teensy USB is plugged in while VIN is powered, cut the VIN-VUSB pad.\n7. ESC red BEC wires (BEC_5V) stay unconnected and taped off.\n8. All grounds are common (every GND symbol is the same net).\n9. Optional: 60 A fuse in the + wire right after the battery."
 		(exclude_from_sim no)
 		(at 20.32 226.06 0)
 		(effects
@@ -6594,11 +6987,11 @@
 			)
 			(justify left top)
 		)
-		(uuid "9ddf6566-ac6a-46f6-babc-989bb76e9f78")
+		(uuid "ac26c353-59c0-487c-b228-c41c356e1b11")
 	)
 	(text "WIRE TAGS"
 		(exclude_from_sim no)
-		(at 297.18 215.9 0)
+		(at 297.18 203.2 0)
 		(effects
 			(font
 				(size 1 1)
@@ -6606,40 +6999,40 @@
 			)
 			(justify left top)
 		)
-		(uuid "cbbe22a3-4f2e-428a-83cd-c47075324efc")
+		(uuid "9f66d4ca-1698-4598-96c4-f3f203dfda33")
 	)
-	(text "W1\nW2\nW3\nW4\nW5\nW6\nW7\nW8\nW9\nW10\nW11\nW12\nW13\nW14\nW15\nW16\nW17\nW18\nW19"
+	(text "W1\nW2\nW3\nW4\nW5\nW6\nW7\nW8\nW9\nW10\nW11\nW12\nW13\nW14\nW15\nW16\nW17\nW18\nW19\nW20\nW21"
 		(exclude_from_sim no)
-		(at 297.18 220.98 0)
+		(at 297.18 208.28 0)
 		(effects
 			(font
 				(size 1 1)
 			)
 			(justify left top)
 		)
-		(uuid "8341e1f1-3f49-4428-b508-b6ef41ea0a87")
+		(uuid "a104ad50-169f-4069-a124-773d4596b7b7")
 	)
-	(text "BATT_RAW\nVBAT\nGND\nM1_A/B/C\nM2_A/B/C\nESC1_SIG\nESC2_SIG\n+5V_LOGIC\n+5V_SERVO\nSERVO1_SIG\nSERVO2_SIG\nUART_TX3\nUART_RX3\nI2C_SDA\nI2C_SCL\n+3V3\nIR1_XSHUT\nIR2_XSHUT\nSERVO3/4_SIG"
+	(text "BATT_RAW\nVBAT\nGND\nM1_A/B/C\nM2_A/B/C\nESC1_SIG\nESC2_SIG\n+5V_LOGIC\n+5V_SERVO\nSERVO1_SIG\nSERVO2_SIG\nUART_TX3\nUART_RX3\nI2C_SDA\nI2C_SCL\n+3V3\nIR1_XSHUT\nIR2_XSHUT\nSERVO3/4_SIG\nSTEER1_SIG\nSTEER2_SIG"
 		(exclude_from_sim no)
-		(at 305.18 220.98 0)
+		(at 305.18 208.28 0)
 		(effects
 			(font
 				(size 1 1)
 			)
 			(justify left top)
 		)
-		(uuid "0636b7cd-7777-403e-9772-d5e9b179f0a3")
+		(uuid "f074b945-4aa9-4f15-a22a-ab93a0e1ea54")
 	)
-	(text "BT1 + to S1\nS1 to ESCs, U3, U4 VIN\nBT1 - to everything\nESC1 to motor 1\nESC2 to motor 2\nESC1 signal to Teensy 2\nESC2 signal to Teensy 3\nU3 out to Teensy VIN, Pi pin 2\nU4 out to servos +\nSV1 to Teensy 4\nSV2 to Teensy 5\nTeensy 14 to Pi pin 10 (RXD)\nPi pin 8 (TXD) to Teensy 15\nTeensy 18 to IMU, IR1, IR2\nTeensy 19 to IMU, IR1, IR2\nTeensy 3.3V to IMU, IR1, IR2\nTeensy 20 to IR1 XSHUT\nTeensy 21 to IR2 XSHUT\nTeensy 6, 7 (later)"
+	(text "BT1 + to S1\nS1 to ESCs, U3, U4 VIN\nBT1 - to everything\nESC1 to motor 1\nESC2 to motor 2\nESC1 signal to Teensy 2\nESC2 signal to Teensy 3\nU3 out to Teensy VIN, Pi pin 2\nU4 out to servos +\nSV1 to Teensy 4\nSV2 to Teensy 5\nTeensy 14 to Pi pin 10 (RXD)\nPi pin 8 (TXD) to Teensy 15\nTeensy 18 to IMU, IR1, IR2\nTeensy 19 to IMU, IR1, IR2\nTeensy 3.3V to IMU, IR1, IR2\nTeensy 20 to IR1 XSHUT\nTeensy 21 to IR2 XSHUT\nTeensy 6, 7 (later)\nST1 to Teensy 8\nST2 to Teensy 9"
 		(exclude_from_sim no)
-		(at 327.18 220.98 0)
+		(at 327.18 208.28 0)
 		(effects
 			(font
 				(size 1 1)
 			)
 			(justify left top)
 		)
-		(uuid "f9c70d2d-ce1e-4aee-94c4-0a42b2046616")
+		(uuid "809175ea-8a7f-4783-b647-9d6cf54f8781")
 	)
 	(sheet_instances
 		(path "/"

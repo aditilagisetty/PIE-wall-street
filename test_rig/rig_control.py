@@ -31,6 +31,11 @@ Keyboard controls (click on the app window first so it gets your key presses):
                     If the gimbals are at different angles, both move by the
                     same amount (the gap between them stays).
 
+    Q / E           Hold to steer the front wheels (Q = negative, E = positive),
+                    STEER_RATE degrees per second. Hold Shift too for slow.
+
+    C               Center the steering (wheels straight, 0).
+
     L               Level the gimbals (tilt back to 0).
 
     R               Start recording to a CSV file in the logs folder.
@@ -53,6 +58,9 @@ Gimbal sliders:
     for you, since it's mounted on the other side of the car.
 To go to an exact value, type it in the box next to the slider and press
 Enter (or Set). The Arduino glides there smoothly; it never jumps.
+
+Steering (front wheels):
+    0 = straight, - turns one way, + turns the other
 
 Graphs always run live (last PLOT_SECONDS). Data is only saved to CSV
 while recording (R or "Start recording").
@@ -122,8 +130,12 @@ THROTTLE_RATE = 15                 # % per second
 THROTTLE_RATE_SLOW = 3
 TILT_RATE = 40                     # degrees per second
 TILT_RATE_SLOW = 8
+STEER_LIMIT_DEG = 45               # max steering each way (match test_rig.ino)
+STEER_RATE = 60                    # degrees per second (Q / E keys)
+STEER_RATE_SLOW = 12
 KEY_TICK_MS = 15
-ZERO_STEP = 0.5                    # -/+ buttons in the Gimbal zero box (deg)
+ZERO_STEP = 0.5                    # -/+ buttons in the zero box (deg)
+ZERO_NAMES = ["Gimbal 1", "Gimbal 2", "Steer 1", "Steer 2"]   # z 1..4 on the Arduino
 
 
 _THR, _RPM, _THRUST, _AMPS = (np.array(col, dtype=float) for col in zip(*MOTOR_CURVE))
@@ -212,7 +224,7 @@ class Link:
 
 # App
 
-FIELDS = ["time_s", "gimbal1_deg", "gimbal2_deg", "throttle1_pct", "throttle2_pct",
+FIELDS = ["time_s", "gimbal1_deg", "gimbal2_deg", "steer_deg", "throttle1_pct", "throttle2_pct",
           "esc1_us", "esc2_us", "armed",
           "rpm1_est", "rpm2_est",
           "thrust1_g_est", "thrust2_g_est", "amps1_est", "amps2_est"]
@@ -311,13 +323,21 @@ class App:
         self.tilt_lbl.pack(anchor="w", pady=(4, 0))
         ttk.Button(controls, text="Level gimbals", command=lambda: self.set_both(0)).pack(anchor="w", pady=(2, 10))
 
-        zbox = ttk.LabelFrame(controls, text="Gimbal zero (deg from servo middle)", padding=4)
+        # Steering: one angle for both front wheels (Arduino code mirror steer 2)
+        ttk.Label(controls, text=f"Steering (deg, 0 = straight, max {STEER_LIMIT_DEG})").pack(anchor="w")
+        self.steer_var = tk.DoubleVar(value=0)
+        ttk.Scale(controls, from_=-STEER_LIMIT_DEG, to=STEER_LIMIT_DEG, variable=self.steer_var,
+                  orient="horizontal", length=240).pack(anchor="w")
+        self.steer_entry_var = self._value_box(controls, self.set_steer_from_box)
+        ttk.Button(controls, text="Center steering", command=lambda: self.steer_var.set(0)).pack(anchor="w", pady=(2, 10))
+
+        zbox = ttk.LabelFrame(controls, text="Zero (deg from servo middle)", padding=4)
         zbox.pack(anchor="w", fill="x", pady=(0, 10))
         self.zero_vars = []
-        for i in range(2):
+        for i, name in enumerate(ZERO_NAMES):
             row = ttk.Frame(zbox)
             row.pack(anchor="w", pady=1)
-            ttk.Label(row, text=f"Gimbal {i + 1}", width=8).pack(side="left")
+            ttk.Label(row, text=name, width=8).pack(side="left")
             var = tk.StringVar(value="?")
             self.zero_vars.append(var)
             ent = ttk.Entry(row, textvariable=var, width=7)
@@ -333,7 +353,9 @@ class App:
             "  A           arm props\n"
             "  Up/Down     hold: throttle up/down\n"
             "  Left/Right  hold: tilt\n"
+            "  Q/E         hold: steer\n"
             "  + Shift     slow, fine control\n"
+            "  C           center steering\n"
             "  L           level gimbals\n"
             "  R           record on/off")).pack(anchor="w")
 
@@ -351,10 +373,11 @@ class App:
         self.ax_rpm = self.fig.add_subplot(3, 1, 2, sharex=self.ax_angle)
         self.ax_xy = self.fig.add_subplot(3, 1, 3)
 
-        self.ax_angle.set_ylabel("gimbal angle (deg)")
+        self.ax_angle.set_ylabel("angle (deg)")
         self.ax_angle.set_ylim(-GIMBAL_LIMIT_DEG - 5, GIMBAL_LIMIT_DEG + 5)
         self.l_g1, = self.ax_angle.plot([], [], label="gimbal 1")
         self.l_g2, = self.ax_angle.plot([], [], label="gimbal 2", linestyle="--")
+        self.l_st, = self.ax_angle.plot([], [], label="steering", linestyle=":")
         self.ax_angle.legend(loc="upper left", fontsize=8)
 
         self.ax_rpm.set_ylabel("prop RPM (estimated)")
@@ -443,6 +466,11 @@ class App:
         if v is not None:
             self.g_vars[i].set(v)
 
+    def set_steer_from_box(self):
+        v = self._read_box(self.steer_entry_var, -STEER_LIMIT_DEG, STEER_LIMIT_DEG, "Steering")
+        if v is not None:
+            self.steer_var.set(v)
+
     def set_both(self, v):
         """Put both gimbals at the same angle."""
         v = min(GIMBAL_LIMIT_DEG, max(-GIMBAL_LIMIT_DEG, v))
@@ -462,6 +490,8 @@ class App:
             "<KeyPress-R>": self.toggle_record,
             "<KeyPress-l>": lambda: self.set_both(0),
             "<KeyPress-L>": lambda: self.set_both(0),
+            "<KeyPress-c>": lambda: self.steer_var.set(0),
+            "<KeyPress-C>": lambda: self.steer_var.set(0),
         }
         for key, action in keys.items():
             if key == "<Escape>":
@@ -477,6 +507,11 @@ class App:
                 for widget in (self.root, self.port_box):   # port_box: don't let the dropdown grab arrows
                     widget.bind(f"<{mod}KeyPress-{key}>", lambda e, k=key: self._arrow(e, k, True))
                     widget.bind(f"<{mod}KeyRelease-{key}>", lambda e, k=key: self._arrow(e, k, False))
+        # Q / E: steer while held
+        for key in ("q", "e", "Q", "E"):
+            name = key.lower()
+            self.root.bind(f"<KeyPress-{key}>", lambda e, k=name: self._arrow(e, k, True))
+            self.root.bind(f"<KeyRelease-{key}>", lambda e, k=name: self._arrow(e, k, False))
         for key in ("Shift_L", "Shift_R"):
             self.root.bind(f"<KeyPress-{key}>", lambda e: setattr(self, "shift", True))
             self.root.bind(f"<KeyRelease-{key}>", lambda e: setattr(self, "shift", False))
@@ -516,6 +551,11 @@ class App:
             for g in self.g_vars:
                 g.set(min(GIMBAL_LIMIT_DEG, max(-GIMBAL_LIMIT_DEG, g.get() + step)))
             self.tilt_var.set(sum(g.get() for g in self.g_vars) / 2)
+        steer = ("e" in self.held) - ("q" in self.held)
+        if steer:
+            rate = STEER_RATE_SLOW if self.shift else STEER_RATE
+            v = self.steer_var.get() + steer * rate * dt
+            self.steer_var.set(min(STEER_LIMIT_DEG, max(-STEER_LIMIT_DEG, v)))
         self.root.after(KEY_TICK_MS, self.tick_keys)
 
     def log(self, text):
@@ -583,14 +623,14 @@ class App:
         self.log("STOP")
 
     def set_zero(self, i, nudge=0.0):
-        """Send gimbal i's zero to the Arduino (it saves it)."""
+        """Send zero i (gimbal 1, gimbal 2, steer 1, steer 2) to the Arduino (it saves it)."""
         if not self.link:
             self.log("connect first")
             return
         try:
             deg = float(self.zero_vars[i].get()) + nudge
         except ValueError:
-            messagebox.showwarning("Rig Control", f"Gimbal {i + 1} zero must be a number.")
+            messagebox.showwarning("Rig Control", f"{ZERO_NAMES[i]} zero must be a number.")
             return
         deg = round(max(-GIMBAL_LIMIT_DEG, min(GIMBAL_LIMIT_DEG, deg)), 1)
         self.zero_vars[i].set(f"{deg:g}")
@@ -626,10 +666,11 @@ class App:
                                          f"est. per motor: ~{estimate_amps(t):.1f} A, "
                                          f"~{estimate_rpm(t):.0f} RPM, {estimate_thrust_g(t):.0f} g")
         self.tilt_lbl.configure(text=f"gimbal 1: {g1:+.1f} deg    gimbal 2: {g2:+.1f} deg")
+        steer = round(self.steer_var.get(), 1)
 
         if self.link:
             t = self.cmd_throttle
-            self.link.send(f"s {g1} {g2} {t} {t}")
+            self.link.send(f"s {g1} {g2} {t} {t} {steer}")
         self.root.after(SEND_EVERY_MS, self.tick_control)
 
     def tick_read(self):
@@ -654,18 +695,20 @@ class App:
 
     def on_telemetry(self, line):
         parts = line.split(",")
-        if len(parts) != 7:
+        if len(parts) not in (7, 8):           # 8 = with steering
             return
         try:
             ms = int(parts[1])
             g1, g2, t1, t2 = (float(x) for x in parts[2:6])
             armed = parts[6] == "1"
+            steer = float(parts[7]) if len(parts) == 8 else 0.0
         except ValueError:
             return
         if self.t0_ms is None or ms < self.t0_ms:
             self.t0_ms = ms
         self.armed = armed
         row = {"time_s": (ms - self.t0_ms) / 1000.0, "gimbal1_deg": g1, "gimbal2_deg": g2,
+               "steer_deg": steer,
                "throttle1_pct": t1, "throttle2_pct": t2,
                "esc1_us": round(pct_to_us(t1)), "esc2_us": round(pct_to_us(t2)), "armed": int(armed),
                "rpm1_est": round(estimate_rpm(t1)), "rpm2_est": round(estimate_rpm(t2)),
@@ -687,7 +730,7 @@ class App:
 
     def on_zero(self, line):
         parts = line.split(":", 1)[1].split()
-        if len(parts) == 2:
+        if len(parts) in (2, 4):               # 4 = gimbals + steering
             for var, val in zip(self.zero_vars, parts):
                 var.set(f"{float(val):g}")
 
@@ -701,6 +744,7 @@ class App:
             r = self.latest
             lines += ["",
                       f"gimbal 1/2: {r['gimbal1_deg']:+.1f} / {r['gimbal2_deg']:+.1f} deg",
+                      f"steering:   {r['steer_deg']:+.1f} deg",
                       f"throttle:   {r['throttle1_pct']:.1f} / {r['throttle2_pct']:.1f} %",
                       f"RPM est:    {r['rpm1_est']} / {r['rpm2_est']}",
                       f"thrust est: {r['thrust1_g_est']} / {r['thrust2_g_est']} g",
@@ -728,6 +772,7 @@ class App:
             t = np.array([r["time_s"] for r in rows])
             self.l_g1.set_data(t, [r["gimbal1_deg"] for r in rows])
             self.l_g2.set_data(t, [r["gimbal2_deg"] for r in rows])
+            self.l_st.set_data(t, [r["steer_deg"] for r in rows])
             self.l_r1e.set_data(t, [r["rpm1_est"] for r in rows])
             self.l_r2e.set_data(t, [r["rpm2_est"] for r in rows])
             self.ax_angle.set_xlim(max(0, t[-1] - PLOT_SECONDS), max(PLOT_SECONDS, t[-1]))
